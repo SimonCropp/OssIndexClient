@@ -26,24 +26,33 @@ public class OSSIndexClient :
 
     public virtual async Task<ComponentReport> GetReport(Package package)
     {
+        Guard.AgainstNull(package, nameof(package));
         var downloadFile = await downloader.DownloadFile(package);
         var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(downloadFile);
+        return ConvertReport(report);
+    }
+
+    static ComponentReport ConvertReport(ComponentReportDto dto)
+    {
         return new ComponentReport(
-            report.coordinates,
-            report.description,
-            report.reference,
-            report.vulnerabilities.Select(x =>
-                new Vulnerability(
-                    x.id,
-                    x.title,
-                    x.description,
-                    x.cvssScore,
-                    x.cvssVector,
-                    x.cve,
-                    x.cwe,
-                    x.reference,
-                    x.versionRanges))
-                .ToList());
+            dto.coordinates,
+            dto.description,
+            dto.reference,
+            dto.vulnerabilities.Select(ConvertVulnerability).ToList());
+    }
+
+    static Vulnerability ConvertVulnerability(VulnerabilityDto dto)
+    {
+        return new Vulnerability(
+            dto.id,
+            dto.title,
+            dto.description,
+            dto.cvssScore,
+            dto.cvssVector,
+            dto.cve,
+            dto.cwe,
+            dto.reference,
+            dto.versionRanges);
     }
 
     public void Dispose()
