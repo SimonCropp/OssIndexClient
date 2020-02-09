@@ -50,9 +50,11 @@ class Downloader
 
     static char[] invalidPathChars = Path.GetInvalidPathChars();
 
+    static string tempDir = Path.Combine(Path.GetTempPath(), "OSSIndexClient");
+
     static string GetPath(Package package)
     {
-        var packageDir = Path.Combine(Path.GetTempPath(), "OSSIndexClient", package.Type, package.Id);
+        var packageDir = Path.Combine(tempDir, package.Type, package.Id);
         Directory.CreateDirectory(packageDir);
         var builder = new StringBuilder(packageDir + @"\");
         foreach (var ch in package.Version.Where(ch => !invalidPathChars.Contains(ch)))
