@@ -31,11 +31,11 @@ public class OSSIndexClient :
 
         var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{package.Url()}";
 #if NETSTANDARD2_1
-        await using var downloadFile = await downloader.DownloadFile(targetPath, uri);
+        await using var stream = await downloader.DownloadFile(targetPath, uri);
 #else
-        using var downloadFile = await downloader.DownloadFile(targetPath, uri);
+        using var stream = await downloader.DownloadFile(targetPath, uri);
 #endif
-        var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(downloadFile);
+        var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(stream);
         return ConvertReport(report);
     }
 
