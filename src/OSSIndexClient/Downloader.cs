@@ -29,8 +29,7 @@ class Downloader
             File.Delete(targetPath);
         }
 
-        var packageUrl = PackageUrlBuilder.Build(package);
-        var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{packageUrl}";
+        var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{package.Url()}";
         using (var response = await httpClient.GetAsync(uri))
         {
             #if (NETSTANDARD2_1)
