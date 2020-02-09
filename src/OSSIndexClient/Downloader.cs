@@ -30,19 +30,21 @@ class Downloader
         }
 
         var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{package.Url()}";
-        using (var response = await httpClient.GetAsync(uri))
+#if (NETSTANDARD2_1)
+        await using (var httpStream = await httpClient.GetStreamAsync(uri))
         {
-            #if (NETSTANDARD2_1)
-            await using var httpStream = await response.Content.ReadAsStreamAsync();
             await using var fileStream = new FileStream(targetPath, FileMode.Create, FileAccess.Write, FileShare.None);
-            #else
-            using var httpStream = await response.Content.ReadAsStreamAsync();
-            using var fileStream = new FileStream(targetPath, FileMode.Create, FileAccess.Write, FileShare.None);
-            #endif
             await httpStream.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
         }
-
+#else
+        using (var httpStream = await httpClient.GetStreamAsync(uri))
+        {
+            using var fileStream = new FileStream(targetPath, FileMode.Create, FileAccess.Write, FileShare.None);
+            await httpStream.CopyToAsync(fileStream);
+            await fileStream.FlushAsync();
+        }
+#endif
         return FileHelpers.OpenRead(targetPath);
     }
 
