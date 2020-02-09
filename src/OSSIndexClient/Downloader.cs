@@ -55,13 +55,8 @@ class Downloader
         var packageDir = Path.Combine(Path.GetTempPath(), "OSSIndexClient", package.Type, package.Id);
         Directory.CreateDirectory(packageDir);
         var builder = new StringBuilder(packageDir + @"\");
-        foreach (var ch in package.Version)
+        foreach (var ch in package.Version.Where(ch => !invalidPathChars.Contains(ch)))
         {
-            if (invalidPathChars.Contains(ch))
-            {
-                continue;
-            }
-
             builder.Append(ch);
         }
 
