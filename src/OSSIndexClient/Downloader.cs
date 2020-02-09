@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-
 class Downloader
 {
     HttpClient httpClient;
@@ -31,7 +30,9 @@ class Downloader
 
             File.Delete(targetPath);
         }
-        var uri = $"https://ossindex.sonatype.org/api/v3/component-report/pkg:{packageType}/{package}@{version}";
+
+        var packageUrl = PackageUrlBuilder.Build(packageType, package, version);
+        var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{packageUrl}";
         using (var response = await httpClient.GetAsync(uri))
         {
             #if (NETSTANDARD2_1)
