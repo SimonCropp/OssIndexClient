@@ -1,10 +1,7 @@
 ﻿class PackageUrlBuilder
 {
-    public static string Build(
-        string packageType,
-        string package,
-        string version)
+    public static string Build(Package package)
     {
-        return $"pkg:{packageType}/{package}@{version}";
+        return $"pkg:{package.Type}/{package.Id}@{package.Version}";
     }
 }

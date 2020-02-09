@@ -24,12 +24,9 @@ public class OSSIndexClient :
         isClientOwned = true;
     }
 
-    public virtual async Task<ComponentReport> GetReport(
-        string packageType,
-        string package,
-        string version)
+    public virtual async Task<ComponentReport> GetReport(Package package)
     {
-        var downloadFile = await downloader.DownloadFile(packageType,package,version);
+        var downloadFile = await downloader.DownloadFile(package);
         var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(downloadFile);
         return new ComponentReport(
             report.coordinates,

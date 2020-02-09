@@ -13,12 +13,10 @@ class Downloader
     {
         this.httpClient = httpClient;
     }
-    public async Task<FileStream> DownloadFile(
-        string packageType,
-        string package,
-        string version)
+
+    public async Task<FileStream> DownloadFile(Package package)
     {
-        var targetPath = GetPath(packageType, package, version);
+        var targetPath = GetPath(package);
 
         if (File.Exists(targetPath))
         {
@@ -31,7 +29,7 @@ class Downloader
             File.Delete(targetPath);
         }
 
-        var packageUrl = PackageUrlBuilder.Build(packageType, package, version);
+        var packageUrl = PackageUrlBuilder.Build(package);
         var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{packageUrl}";
         using (var response = await httpClient.GetAsync(uri))
         {
@@ -51,15 +49,12 @@ class Downloader
 
     static char[] invalidPathChars = Path.GetInvalidPathChars();
 
-    static string GetPath(
-        string packageType,
-        string package,
-        string version)
+    static string GetPath(Package package)
     {
-        var packageDir = Path.Combine(Path.GetTempPath(), "OSSIndexClient", packageType, package);
+        var packageDir = Path.Combine(Path.GetTempPath(), "OSSIndexClient", package.Type, package.Id);
         Directory.CreateDirectory(packageDir);
         var builder = new StringBuilder(packageDir + @"\");
-        foreach (var ch in version)
+        foreach (var ch in package.Version)
         {
             if (invalidPathChars.Contains(ch))
             {
