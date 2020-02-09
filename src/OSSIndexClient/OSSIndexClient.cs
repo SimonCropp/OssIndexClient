@@ -27,7 +27,10 @@ public class OSSIndexClient :
     public virtual async Task<ComponentReport> GetReport(Package package)
     {
         Guard.AgainstNull(package, nameof(package));
-        var downloadFile = await downloader.GetPackageResponse(package);
+        var targetPath = TempPath.GetPath(package);
+
+        var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{package.Url()}";
+        var downloadFile = await downloader.DownloadFile(targetPath, uri);
         var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(downloadFile);
         return ConvertReport(report);
     }
