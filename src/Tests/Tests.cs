@@ -23,7 +23,7 @@ public class Tests :
 
         #endregion
 
-        await Verify(report, settings );
+        await Verify(report, settings);
     }
 
 

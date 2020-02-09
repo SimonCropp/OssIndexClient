@@ -9,11 +9,13 @@ public class OSSIndexClient :
 {
     HttpClient httpClient;
     bool isClientOwned;
+    Downloader downloader;
 
     public OSSIndexClient(HttpClient httpClient)
     {
-        this.httpClient = httpClient;
         Guard.AgainstNull(httpClient, nameof(httpClient));
+        this.httpClient = httpClient;
+        downloader = new Downloader(httpClient);
     }
 
     public OSSIndexClient() :
@@ -27,9 +29,8 @@ public class OSSIndexClient :
         string package,
         string version)
     {
-        var uri = $"https://ossindex.sonatype.org/api/v3/component-report/pkg:{packageType}/{package}@{version}";
-        var response = await httpClient.GetStringAsync(uri);
-        var report = JsonSerializer.Deserialize<ComponentReportDto>(response);
+        var downloadFile = await downloader.DownloadFile(packageType,package,version);
+        var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(downloadFile);
         return new ComponentReport(
             report.coordinates,
             report.description,
