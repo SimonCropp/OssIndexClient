@@ -27,7 +27,7 @@ public class OSSIndexClient :
     public virtual async Task<ComponentReport> GetReport(Package package)
     {
         Guard.AgainstNull(package, nameof(package));
-        var downloadFile = await downloader.DownloadFile(package);
+        var downloadFile = await downloader.GetPackageResponse(package);
         var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(downloadFile);
         return ConvertReport(report);
     }

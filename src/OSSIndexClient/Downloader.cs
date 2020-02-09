@@ -14,7 +14,7 @@ class Downloader
         this.httpClient = httpClient;
     }
 
-    public async Task<FileStream> DownloadFile(Package package)
+    public async Task<FileStream> GetPackageResponse(Package package)
     {
         var targetPath = GetPath(package);
 
