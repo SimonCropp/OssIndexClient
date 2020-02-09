@@ -9,6 +9,19 @@ public class Tests :
 {
 
     [Fact]
+    public async Task GetReport404()
+    {
+
+        using var ossIndexClient = new OSSIndexClient();
+        var report = await ossIndexClient.GetReport(
+            packageType: "nuget",
+            package: "sdjhgfb",
+            version: "4.3.1");
+
+        await Verify(report);
+    }
+
+    [Fact]
     public async Task GetReport()
     {
         var settings = new VerifySettings();

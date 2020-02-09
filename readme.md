@@ -37,7 +37,7 @@ var report = await ossIndexClient.GetReport(
     package: "System.Net.Http",
     version: "4.3.1");
 ```
-<sup><a href='/src/Tests/Tests.cs#L16-L24' title='File snippet `getreport` was extracted from'>snippet source</a> | <a href='#snippet-getreport' title='Navigate to start of snippet `getreport`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L29-L37' title='File snippet `getreport` was extracted from'>snippet source</a> | <a href='#snippet-getreport' title='Navigate to start of snippet `getreport`'>anchor</a></sup>
 <!-- endsnippet -->
 
 <!-- snippet: Tests.GetReport.verified.txt -->

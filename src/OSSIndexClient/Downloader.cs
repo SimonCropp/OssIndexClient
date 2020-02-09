@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
+
 class Downloader
 {
     HttpClient httpClient;
@@ -31,20 +32,6 @@ class Downloader
             File.Delete(targetPath);
         }
         var uri = $"https://ossindex.sonatype.org/api/v3/component-report/pkg:{packageType}/{package}@{version}";
-        var requestMessage = new HttpRequestMessage(HttpMethod.Head, uri);
-
-        using (var headResponse = await httpClient.SendAsync(requestMessage))
-        {
-            //TODO: handle 404
-            //if (headResponse.ReasonPhrase == "Redirect")
-            //{
-            //    File.Delete(targetPath);
-            //    return;
-            //}
-
-            //remoteLastModified = headResponse.Content.Headers.LastModified.GetValueOrDefault(DateTimeOffset.UtcNow).UtcDateTime;
-        }
-
         using (var response = await httpClient.GetAsync(uri))
         {
             #if (NETSTANDARD2_1)
