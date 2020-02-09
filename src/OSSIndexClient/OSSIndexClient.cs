@@ -30,7 +30,11 @@ public class OSSIndexClient :
         var targetPath = TempPath.GetPath(package);
 
         var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{package.Url()}";
-        var downloadFile = await downloader.DownloadFile(targetPath, uri);
+#if NETSTANDARD2_1
+        await using var downloadFile = await downloader.DownloadFile(targetPath, uri);
+#else
+        using var downloadFile = await downloader.DownloadFile(targetPath, uri);
+#endif
         var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(downloadFile);
         return ConvertReport(report);
     }
