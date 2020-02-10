@@ -53,7 +53,7 @@ class Downloader
             EnsureOk(uri, response);
 #if (NETSTANDARD2_1)
             await using var httpStream = await response.Content.ReadAsStreamAsync();
-            var fileStream = await FileHelpers.SafeOpenWrite(targetPath);
+            await using var fileStream = await FileHelpers.SafeOpenWrite(targetPath);
             await httpStream.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
 #else
