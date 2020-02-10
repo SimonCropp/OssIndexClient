@@ -17,7 +17,7 @@ public class Tests :
         var report = await ossIndexClient.GetReport(
             new Package(
                 ecoSystem: EcoSystem.nuget,
-                id: "sdjhgfb",
+                name: "sdjhgfb",
                 version: "4.3.1"));
 
         await Verify(report);
@@ -35,11 +35,11 @@ public class Tests :
         var reports = await ossIndexClient.GetReports(
             new Package(
                 ecoSystem: EcoSystem.nuget,
-                id: "System.Net.Http",
+                name: "System.Net.Http",
                 version: "4.3.1"),
             new Package(
                 ecoSystem: EcoSystem.npm,
-                id: "jquery",
+                name: "jquery",
                 version: "1.11.3"));
         foreach (var report in reports)
         {
@@ -66,7 +66,7 @@ public class Tests :
         var report = await ossIndexClient.GetReport(
             new Package(
                 ecoSystem: EcoSystem.nuget,
-                id: "System.Net.Http",
+                name: "System.Net.Http",
                 version: "4.3.1"));
 
         foreach (var vulnerability in report.Vulnerabilities)

@@ -2,17 +2,17 @@
 {
     public class Package
     {
-        public Package(EcoSystem ecoSystem, string id, string version)
+        public Package(EcoSystem ecoSystem, string name, string version)
         {
-            Guard.AgainstNull(id, nameof(id));
+            Guard.AgainstNull(name, nameof(name));
             Guard.AgainstNull(version, nameof(version));
             EcoSystem = ecoSystem;
-            Id = id;
+            Name = name;
             Version = version;
         }
 
         public EcoSystem EcoSystem { get; }
-        public string Id { get; }
+        public string Name { get; }
         public string Version { get; }
     }
 }

@@ -1,5 +1,5 @@
 {
   EcoSystem: 'nuget',
-  Id: 'System.Net.Security',
+  Name: 'System.Net.Security',
   Version: '4.3.0'
 }
