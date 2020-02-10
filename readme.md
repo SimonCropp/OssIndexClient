@@ -20,7 +20,7 @@ A .net client for OSSIndex (https://ossindex.sonatype.org/).
     * [Getting a report](#getting-a-report)
     * [Getting multiple reports](#getting-multiple-reports)
     * [Example report contents](#example-report-contents)
-  * [Package Ecosystms](#package-ecosystms)
+  * [Package Ecosystems](#package-ecosystems)
   * [Notes](#notes)
   * [Security contact information](#security-contact-information)<!-- endtoc -->
 
@@ -134,9 +134,10 @@ foreach (var report in reports)
 <sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L45' title='File snippet `Tests.GetReport.verified.txt` was extracted from'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Navigate to start of snippet `Tests.GetReport.verified.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
-## Package Ecosystms
 
-The supported [OSSIndex Package Ecosystms](https://ossindex.sonatype.org/doc/coordinates) are representred by an enum.
+## Package Ecosystems
+
+The supported [OSSIndex Package Ecosystems](https://ossindex.sonatype.org/doc/coordinates) are represented by an enum.
 
 <!-- snippet: EcoSystem -->
 <a id='snippet-ecosystem'/></a>
