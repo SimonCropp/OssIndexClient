@@ -17,6 +17,9 @@ A .net client for OSSIndex (https://ossindex.sonatype.org/).
 ## Contents
 
   * [Usage](#usage)
+    * [Getting a report](#getting-a-report)
+    * [Getting multiple reports](#getting-multiple-reports)
+    * [Example report contents](#example-report-contents)
   * [Notes](#notes)
   * [Security contact information](#security-contact-information)<!-- endtoc -->
 
@@ -28,6 +31,8 @@ https://nuget.org/packages/OssIndexClient/
 
 ## Usage
 
+### Getting a report
+
 <!-- snippet: GetReport -->
 <a id='snippet-getreport'/></a>
 ```cs
@@ -37,9 +42,44 @@ var report = await ossIndexClient.GetReport(
         type: "nuget",
         id: "System.Net.Http",
         version: "4.3.1"));
+
+foreach (var vulnerability in report.Vulnerabilities)
+{
+    Debug.WriteLine(vulnerability.Title);
+}
 ```
-<sup><a href='/src/Tests/Tests.cs#L30-L39' title='File snippet `getreport` was extracted from'>snippet source</a> | <a href='#snippet-getreport' title='Navigate to start of snippet `getreport`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L62-L75' title='File snippet `getreport` was extracted from'>snippet source</a> | <a href='#snippet-getreport' title='Navigate to start of snippet `getreport`'>anchor</a></sup>
 <!-- endsnippet -->
+
+
+### Getting multiple reports
+
+<!-- snippet: GetReports -->
+<a id='snippet-getreports'/></a>
+```cs
+using var ossIndexClient = new OssIndex();
+var reports = await ossIndexClient.GetReports(
+    new Package(
+        type: "nuget",
+        id: "System.Net.Http",
+        version: "4.3.1"),
+    new Package(
+        type: "nuget",
+        id: "System.Net.Security",
+        version: "4.3.0"));
+foreach (var report in reports)
+{
+    foreach (var vulnerability in report.Vulnerabilities)
+    {
+        Debug.WriteLine(vulnerability.Title);
+    }
+}
+```
+<sup><a href='/src/Tests/Tests.cs#L31-L51' title='File snippet `getreports` was extracted from'>snippet source</a> | <a href='#snippet-getreports' title='Navigate to start of snippet `getreports`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
+### Example report contents
 
 <!-- snippet: Tests.GetReport.verified.txt -->
 <a id='snippet-Tests.GetReport.verified.txt'/></a>
@@ -90,6 +130,7 @@ var report = await ossIndexClient.GetReport(
 ```
 <sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L43' title='File snippet `Tests.GetReport.verified.txt` was extracted from'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Navigate to start of snippet `Tests.GetReport.verified.txt`'>anchor</a></sup>
 <!-- endsnippet -->
+
 
 
 ## Notes

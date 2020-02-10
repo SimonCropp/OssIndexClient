@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ class Downloader
     {
         this.httpClient = httpClient;
     }
+    private const string RequestContentType = "application/vnd.ossindex.component-report-request.v1+json";
 
     public async Task<Stream> Post(string targetPath, string uri, string content)
     {
@@ -20,23 +22,21 @@ class Downloader
         {
             return stream;
         }
-
-        using var stringContent = new StringContent(content, Encoding.UTF8);
-#if (NETSTANDARD2_1)
-        using (var response = await httpClient.PostAsync(uri, stringContent))
+        using var httpContent = new StringContent(content, Encoding.UTF8, RequestContentType);
+        using (var response = await httpClient.PostAsync(uri, httpContent))
         {
+            EnsureOk(uri, response, content);
+#if (NETSTANDARD2_1)
             await using var fileStream = FileHelpers.OpenWrite(targetPath);
             await response.Content.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
-        }
 #else
-        using (var response = await httpClient.PostAsync(uri, stringContent))
-        {
             using var fileStream = FileHelpers.OpenWrite(targetPath);
             await response.Content.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
-        }
 #endif
+        }
+
         return FileHelpers.OpenRead(targetPath);
     }
 
@@ -48,22 +48,40 @@ class Downloader
             return stream;
         }
 
-#if (NETSTANDARD2_1)
-        await using (var httpStream = await httpClient.GetStreamAsync(uri))
+        using (var response = await httpClient.GetAsync(uri))
         {
-            await using var fileStream = FileHelpers.OpenWrite(targetPath);
+            EnsureOk(uri, response);
+#if (NETSTANDARD2_1)
+            await using var httpStream = await response.Content.ReadAsStreamAsync();
+            var fileStream = FileHelpers.OpenWrite(targetPath);
             await httpStream.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
-        }
 #else
-        using (var httpStream = await httpClient.GetStreamAsync(uri))
-        {
+            using var httpStream = await response.Content.ReadAsStreamAsync();
             using var fileStream = FileHelpers.OpenWrite(targetPath);
             await httpStream.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
-        }
 #endif
+        }
         return FileHelpers.OpenRead(targetPath);
+    }
+
+    static void EnsureOk(string uri, HttpResponseMessage response, string? content = null)
+    {
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            return;
+        }
+
+        if (content == null)
+        {
+            throw new Exception($@"Invalid HTTP response: {response.StatusCode}.
+Uri:{uri}");
+        }
+
+        throw new Exception($@"Invalid HTTP response: {response.StatusCode}.
+Uri:{uri}
+Content: {content}");
     }
 
     static bool ReadIfRecent(string targetPath, [NotNullWhen(true)] out FileStream? stream)

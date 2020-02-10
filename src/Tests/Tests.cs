@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using OssIndexClient;
 using Verify;
 using VerifyXunit;
@@ -22,6 +23,37 @@ public class Tests :
     }
 
     [Fact]
+    public async Task GetReports()
+    {
+        var settings = new VerifySettings();
+        settings.ModifySerialization(_ => _.DontScrubGuids());
+
+        #region GetReports
+
+        using var ossIndexClient = new OssIndex();
+        var reports = await ossIndexClient.GetReports(
+            new Package(
+                type: "nuget",
+                id: "System.Net.Http",
+                version: "4.3.1"),
+            new Package(
+                type: "nuget",
+                id: "System.Net.Security",
+                version: "4.3.0"));
+        foreach (var report in reports)
+        {
+            foreach (var vulnerability in report.Vulnerabilities)
+            {
+                Debug.WriteLine(vulnerability.Title);
+            }
+        }
+
+        #endregion
+
+        await Verify(reports, settings);
+    }
+
+    [Fact]
     public async Task GetReport()
     {
         var settings = new VerifySettings();
@@ -36,6 +68,10 @@ public class Tests :
                 id: "System.Net.Http",
                 version: "4.3.1"));
 
+        foreach (var vulnerability in report.Vulnerabilities)
+        {
+            Debug.WriteLine(vulnerability.Title);
+        }
         #endregion
 
         await Verify(report, settings);

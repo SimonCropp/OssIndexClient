@@ -16,9 +16,20 @@ https://nuget.org/packages/OssIndexClient/
 
 ## Usage
 
+### Getting a report
+
 snippet: GetReport
 
+
+### Getting multiple reports
+
+snippet: GetReports
+
+
+### Example report contents
+
 snippet: Tests.GetReport.verified.txt
+
 
 
 ## Notes

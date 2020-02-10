@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
@@ -24,6 +25,31 @@ namespace OssIndexClient
             this(new HttpClient())
         {
             isClientOwned = true;
+        }
+
+        public virtual Task<IReadOnlyList<ComponentReport>> GetReports(params Package[] packages)
+        {
+            return GetReports((IEnumerable<Package>) packages);
+        }
+
+        public virtual async Task<IReadOnlyList<ComponentReport>> GetReports(IEnumerable<Package> packages)
+        {
+            Guard.AgainstNull(packages, nameof(packages));
+            packages = packages.ToList();
+            var targetPath = TempPath.GetPath(packages);
+            var content = JsonSerializer.Serialize(
+                new ComponentReportRequestDto
+                {
+                    coordinates = packages.Select(x => x.Url()).ToArray()
+                });
+            var uri = "https://ossindex.sonatype.org/api/v3/component-report";
+#if NETSTANDARD2_1
+            await using var stream = await downloader.Post(targetPath, uri, content);
+#else
+            using var stream = await downloader.Post(targetPath, uri,content);
+#endif
+            var reports = await JsonSerializer.DeserializeAsync<ComponentReportDto[]>(stream);
+            return reports.Select(ConvertReport).ToList();
         }
 
         public virtual async Task<ComponentReport> GetReport(Package package)
