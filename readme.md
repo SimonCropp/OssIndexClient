@@ -31,7 +31,7 @@ https://nuget.org/packages/OSSIndexClient/
 <!-- snippet: GetReport -->
 <a id='snippet-getreport'/></a>
 ```cs
-using var ossIndexClient = new OSSIndexClient();
+using var ossIndexClient = new OSSIndex();
 var report = await ossIndexClient.GetReport(
     new Package(
         type: "nuget",
