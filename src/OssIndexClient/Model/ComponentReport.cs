@@ -6,18 +6,20 @@ namespace OssIndexClient
     {
         public ComponentReport(
             EcoSystem ecoSystem,
-            string id,
+            string? @namespace,
+            string name,
             string version,
             string? description,
             string reference,
             IReadOnlyList<Vulnerability> vulnerabilities)
         {
-            Guard.AgainstNull(id, nameof(id));
+            Guard.AgainstNull(name, nameof(name));
             Guard.AgainstNull(version, nameof(version));
             Guard.AgainstNullOrEmpty(reference, nameof(reference));
             Guard.AgainstNull(vulnerabilities, nameof(vulnerabilities));
             EcoSystem = ecoSystem;
-            Id = id;
+            Namespace = @namespace;
+            Name = name;
             Version = version;
             Description = description;
             Reference = reference;
@@ -25,7 +27,8 @@ namespace OssIndexClient
         }
 
         public EcoSystem EcoSystem { get; }
-        public string Id { get; }
+        public string? Namespace { get; }
+        public string Name { get; }
         public string Version { get; }
         public string? Description { get; }
         public string Reference { get; }

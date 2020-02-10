@@ -87,7 +87,7 @@ foreach (var report in reports)
 ```txt
 {
   EcoSystem: 'nuget',
-  Id: 'System.Net.Http',
+  Name: 'System.Net.Http',
   Version: '4.3.1',
   Description: 'This package provides a programming interface for modern HTTP applications. This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for processing HTTP messages.',
   Reference: 'https://ossindex.sonatype.org/component/pkg:nuget/System.Net.Http@4.3.1',

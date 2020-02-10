@@ -72,6 +72,7 @@ namespace OssIndexClient
             var package = CoordinatesHelper.Parse(dto.coordinates);
             return new ComponentReport(
                 package.EcoSystem,
+                package.Namespace,
                 package.Name,
                 package.Version,
                 dto.description,
