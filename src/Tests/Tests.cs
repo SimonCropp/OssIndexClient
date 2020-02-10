@@ -16,7 +16,7 @@ public class Tests :
         using var ossIndexClient = new OssIndex();
         var report = await ossIndexClient.GetReport(
             new Package(
-                type: "nuget",
+                ecoSystem: EcoSystem.nuget,
                 id: "sdjhgfb",
                 version: "4.3.1"));
 
@@ -34,11 +34,11 @@ public class Tests :
         using var ossIndexClient = new OssIndex();
         var reports = await ossIndexClient.GetReports(
             new Package(
-                type: "nuget",
+                ecoSystem: EcoSystem.nuget,
                 id: "System.Net.Http",
                 version: "4.3.1"),
             new Package(
-                type: "nuget",
+                ecoSystem: EcoSystem.nuget,
                 id: "System.Net.Security",
                 version: "4.3.0"));
         foreach (var report in reports)
@@ -65,7 +65,7 @@ public class Tests :
         using var ossIndexClient = new OssIndex();
         var report = await ossIndexClient.GetReport(
             new Package(
-                type: "nuget",
+                ecoSystem: EcoSystem.nuget,
                 id: "System.Net.Http",
                 version: "4.3.1"));
 

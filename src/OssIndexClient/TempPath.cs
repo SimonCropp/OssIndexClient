@@ -23,7 +23,7 @@ static class TempPath
         foreach (var package in packages)
         {
             codes.Add(package.Id.GetStableHashCode());
-            codes.Add(package.Type.GetStableHashCode());
+            codes.Add(package.EcoSystem.ToString().GetStableHashCode());
             codes.Add(package.Version.GetStableHashCode());
         }
 
@@ -43,7 +43,7 @@ static class TempPath
 
     public static string GetPath(Package package)
     {
-        var packageDir = Path.Combine(tempDir, package.Type, package.Id);
+        var packageDir = Path.Combine(tempDir, package.EcoSystem.ToString(), package.Id);
         Directory.CreateDirectory(packageDir);
         var builder = new StringBuilder(packageDir + @"\");
         foreach (var ch in package.Version.Where(ch => !invalidPathChars.Contains(ch)))

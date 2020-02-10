@@ -30,6 +30,11 @@ snippet: GetReports
 
 snippet: Tests.GetReport.verified.txt
 
+## Package Ecosystms
+
+The supported [OSSIndex Package Ecosystms](https://ossindex.sonatype.org/doc/coordinates) are representred by an enum.
+
+snippet: EcoSystem
 
 
 ## Notes

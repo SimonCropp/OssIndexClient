@@ -1,6 +1,6 @@
 [
   {
-    Type: 'nuget',
+    EcoSystem: 'nuget',
     Id: 'System.Net.Http',
     Version: '4.3.1',
     Description: 'This package provides a programming interface for modern HTTP applications. This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for processing HTTP messages.',
@@ -45,7 +45,7 @@
     ]
   },
   {
-    Type: 'nuget',
+    EcoSystem: 'nuget',
     Id: 'System.Net.Security',
     Version: '4.3.0',
     Description: 'No description available.',

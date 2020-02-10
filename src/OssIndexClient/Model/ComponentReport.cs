@@ -5,19 +5,18 @@ namespace OssIndexClient
     public class ComponentReport
     {
         public ComponentReport(
-            string type,
+            EcoSystem ecoSystem,
             string id,
             string version,
             string? description,
             string reference,
             IReadOnlyList<Vulnerability> vulnerabilities)
         {
-            Guard.AgainstNull(type, nameof(type));
             Guard.AgainstNull(id, nameof(id));
             Guard.AgainstNull(version, nameof(version));
             Guard.AgainstNullOrEmpty(reference, nameof(reference));
             Guard.AgainstNull(vulnerabilities, nameof(vulnerabilities));
-            Type = type;
+            EcoSystem = ecoSystem;
             Id = id;
             Version = version;
             Description = description;
@@ -25,7 +24,7 @@ namespace OssIndexClient
             Vulnerabilities = vulnerabilities;
         }
 
-        public string Type { get; }
+        public EcoSystem EcoSystem { get; }
         public string Id { get; }
         public string Version { get; }
         public string? Description { get; }

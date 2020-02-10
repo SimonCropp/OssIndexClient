@@ -20,6 +20,7 @@ A .net client for OSSIndex (https://ossindex.sonatype.org/).
     * [Getting a report](#getting-a-report)
     * [Getting multiple reports](#getting-multiple-reports)
     * [Example report contents](#example-report-contents)
+  * [Package Ecosystms](#package-ecosystms)
   * [Notes](#notes)
   * [Security contact information](#security-contact-information)<!-- endtoc -->
 
@@ -39,7 +40,7 @@ https://nuget.org/packages/OssIndexClient/
 using var ossIndexClient = new OssIndex();
 var report = await ossIndexClient.GetReport(
     new Package(
-        type: "nuget",
+        ecoSystem: EcoSystem.nuget,
         id: "System.Net.Http",
         version: "4.3.1"));
 
@@ -60,11 +61,11 @@ foreach (var vulnerability in report.Vulnerabilities)
 using var ossIndexClient = new OssIndex();
 var reports = await ossIndexClient.GetReports(
     new Package(
-        type: "nuget",
+        ecoSystem: EcoSystem.nuget,
         id: "System.Net.Http",
         version: "4.3.1"),
     new Package(
-        type: "nuget",
+        ecoSystem: EcoSystem.nuget,
         id: "System.Net.Security",
         version: "4.3.0"));
 foreach (var report in reports)
@@ -85,7 +86,7 @@ foreach (var report in reports)
 <a id='snippet-Tests.GetReport.verified.txt'/></a>
 ```txt
 {
-  Type: 'nuget',
+  EcoSystem: 'nuget',
   Id: 'System.Net.Http',
   Version: '4.3.1',
   Description: 'This package provides a programming interface for modern HTTP applications. This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for processing HTTP messages.',
@@ -133,6 +134,72 @@ foreach (var report in reports)
 <sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L45' title='File snippet `Tests.GetReport.verified.txt` was extracted from'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Navigate to start of snippet `Tests.GetReport.verified.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
+## Package Ecosystms
+
+The supported [OSSIndex Package Ecosystms](https://ossindex.sonatype.org/doc/coordinates) are representred by an enum.
+
+<!-- snippet: EcoSystem -->
+<a id='snippet-ecosystem'/></a>
+```cs
+public enum EcoSystem
+{
+    /// <summary>https://alpinelinux.org</summary>
+    alpine,
+
+    /// <summary>https://bower.io</summary>
+    bower,
+
+    /// <summary>https://crates.io</summary>
+    cargo,
+
+    /// <summary>https://chocolatey.org</summary>
+    chocolatey,
+
+    /// <summary>https://clojars.org</summary>
+    clojars,
+
+    /// <summary>https://getcomposer.org</summary>
+    composer,
+
+    /// <summary>https://conan.io</summary>
+    conan,
+
+    /// <summary>https://conda.io</summary>
+    conda,
+
+    /// <summary>https://cran.r-project.org</summary>
+    cran,
+
+    /// <summary>https://www.debian.org</summary>
+    deb,
+
+    /// <summary>https://www.drupal.org</summary>
+    drupal,
+
+    /// <summary>https://golang.org/pkg</summary>
+    golang,
+
+    /// <summary>https://maven.apache.org</summary>
+    maven,
+
+    /// <summary>https://www.npmjs.com</summary>
+    npm,
+
+    /// <summary>https://www.nuget.org</summary>
+    nuget,
+
+    /// <summary>https://pypi.org</summary>
+    pypi,
+
+    /// <summary>https://rpm.org</summary>
+    rpm,
+
+    /// <summary>https://rubygems.org</summary>
+    gem,
+}
+```
+<sup><a href='/src/OssIndexClient/EcoSystem.cs#L7-L66' title='File snippet `ecosystem` was extracted from'>snippet source</a> | <a href='#snippet-ecosystem' title='Navigate to start of snippet `ecosystem`'>anchor</a></sup>
+<!-- endsnippet -->
 
 
 ## Notes
