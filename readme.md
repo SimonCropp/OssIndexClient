@@ -214,4 +214,4 @@ To report a security vulnerability, use the [Tidelift security contact](https://
 
 ## Icon
 
-[Database](https://thenounproject.com/term/security/1264523/) designed by [Made](https://thenounproject.com/elki/) from [The Noun Project](https://thenounproject.com/creativepriyanka).
+[Security](https://thenounproject.com/term/security/1264523/) designed by [Made](https://thenounproject.com/elki/) from [The Noun Project](https://thenounproject.com/creativepriyanka).
