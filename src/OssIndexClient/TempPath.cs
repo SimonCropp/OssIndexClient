@@ -43,7 +43,7 @@ static class TempPath
 
     public static string GetPath(Package package)
     {
-        var packageDir = Path.Combine(tempDir, package.Type, package.Id);
+        var packageDir = Path.Combine(tempDir, "aa", package.Id);
         Directory.CreateDirectory(packageDir);
         var builder = new StringBuilder(packageDir + @"\");
         foreach (var ch in package.Version.Where(ch => !invalidPathChars.Contains(ch)))
