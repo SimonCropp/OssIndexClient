@@ -35,7 +35,7 @@ namespace OssIndexClient
 #if NETSTANDARD2_1
             await using var stream = await downloader.Get(targetPath, uri);
 #else
-        using var stream = await downloader.Get(targetPath, uri);
+            using var stream = await downloader.Get(targetPath, uri);
 #endif
             var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(stream);
             return ConvertReport(report);
