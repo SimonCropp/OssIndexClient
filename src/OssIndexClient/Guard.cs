@@ -17,4 +17,12 @@ static class Guard
             throw new ArgumentNullException(argumentName);
         }
     }
+
+    public static void AgainstEmpty(Guid value, string argumentName)
+    {
+        if (value == Guid.Empty)
+        {
+            throw new ArgumentNullException(argumentName);
+        }
+    }
 }
