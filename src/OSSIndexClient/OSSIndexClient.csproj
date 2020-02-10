@@ -6,5 +6,6 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="ProjectDefaults" Version="1.0.41" PrivateAssets="All" />
     <PackageReference Include="System.Text.Json" Version="4.7.0" />
+    <PackageReference Include="Nullable" Version="1.2.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>

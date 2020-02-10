@@ -11,4 +11,14 @@ static class FileHelpers
             bufferSize: 4096,
             useAsync: true);
     }
+    public  static FileStream OpenWrite(string filePath)
+    {
+        return new FileStream(
+            filePath,
+            FileMode.Create,
+            FileAccess.Write,
+            FileShare.None,
+            bufferSize: 4096,
+            useAsync: true);
+    }
 }
