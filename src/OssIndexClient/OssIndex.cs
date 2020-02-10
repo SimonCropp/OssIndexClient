@@ -40,7 +40,7 @@ namespace OssIndexClient
             var content = JsonSerializer.Serialize(
                 new ComponentReportRequestDto
                 {
-                    coordinates = packages.Select(x => x.Url()).ToArray()
+                    coordinates = packages.Select(x => x.Coordinates()).ToArray()
                 });
             var uri = "https://ossindex.sonatype.org/api/v3/component-report";
 #if NETSTANDARD2_1
@@ -57,7 +57,7 @@ namespace OssIndexClient
             Guard.AgainstNull(package, nameof(package));
             var targetPath = TempPath.GetPath(package);
 
-            var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{package.Url()}";
+            var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{package.Coordinates()}";
 #if NETSTANDARD2_1
             await using var stream = await downloader.Get(targetPath, uri);
 #else
@@ -69,8 +69,11 @@ namespace OssIndexClient
 
         static ComponentReport ConvertReport(ComponentReportDto dto)
         {
+            var package = CoordinatesHelper.Parse(dto.coordinates);
             return new ComponentReport(
-                dto.coordinates,
+                package.Type,
+                package.Id,
+                package.Version,
                 dto.description,
                 dto.reference,
                 dto.vulnerabilities.Select(ConvertVulnerability).ToList());

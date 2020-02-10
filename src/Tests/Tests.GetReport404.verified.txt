@@ -1,4 +1,6 @@
 {
-  Coordinates: 'pkg:nuget/sdjhgfb@4.3.1',
+  Type: 'nuget',
+  Id: 'sdjhgfb',
+  Version: '4.3.1',
   Reference: 'https://ossindex.sonatype.org/component/pkg:nuget/sdjhgfb@4.3.1'
 }

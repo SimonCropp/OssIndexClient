@@ -48,7 +48,7 @@ foreach (var vulnerability in report.Vulnerabilities)
     Debug.WriteLine(vulnerability.Title);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L62-L75' title='File snippet `getreport` was extracted from'>snippet source</a> | <a href='#snippet-getreport' title='Navigate to start of snippet `getreport`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L63-L76' title='File snippet `getreport` was extracted from'>snippet source</a> | <a href='#snippet-getreport' title='Navigate to start of snippet `getreport`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -75,7 +75,7 @@ foreach (var report in reports)
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L31-L51' title='File snippet `getreports` was extracted from'>snippet source</a> | <a href='#snippet-getreports' title='Navigate to start of snippet `getreports`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L32-L52' title='File snippet `getreports` was extracted from'>snippet source</a> | <a href='#snippet-getreports' title='Navigate to start of snippet `getreports`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -85,7 +85,9 @@ foreach (var report in reports)
 <a id='snippet-Tests.GetReport.verified.txt'/></a>
 ```txt
 {
-  Coordinates: 'pkg:nuget/System.Net.Http@4.3.1',
+  Type: 'nuget',
+  Id: 'System.Net.Http',
+  Version: '4.3.1',
   Description: 'This package provides a programming interface for modern HTTP applications. This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for processing HTTP messages.',
   Reference: 'https://ossindex.sonatype.org/component/pkg:nuget/System.Net.Http@4.3.1',
   Vulnerabilities: [
@@ -128,7 +130,7 @@ foreach (var report in reports)
   ]
 }
 ```
-<sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L43' title='File snippet `Tests.GetReport.verified.txt` was extracted from'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Navigate to start of snippet `Tests.GetReport.verified.txt`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L45' title='File snippet `Tests.GetReport.verified.txt` was extracted from'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Navigate to start of snippet `Tests.GetReport.verified.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
