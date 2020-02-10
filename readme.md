@@ -65,9 +65,9 @@ var reports = await ossIndexClient.GetReports(
         id: "System.Net.Http",
         version: "4.3.1"),
     new Package(
-        ecoSystem: EcoSystem.nuget,
-        id: "System.Net.Security",
-        version: "4.3.0"));
+        ecoSystem: EcoSystem.npm,
+        id: "jquery",
+        version: "1.11.3"));
 foreach (var report in reports)
 {
     foreach (var vulnerability in report.Vulnerabilities)
