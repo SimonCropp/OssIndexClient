@@ -27,17 +27,17 @@ class Downloader
         {
             EnsureOk(uri, response, content);
 #if (NETSTANDARD2_1)
-            await using var fileStream = FileHelpers.OpenWrite(targetPath);
+            await using var fileStream = await FileHelpers.SafeOpenWrite(targetPath);
             await response.Content.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
 #else
-            using var fileStream = FileHelpers.OpenWrite(targetPath);
+            using var fileStream = await FileHelpers.SafeOpenWrite(targetPath);
             await response.Content.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
 #endif
         }
 
-        return FileHelpers.OpenRead(targetPath);
+        return await FileHelpers.SafeOpenRead(targetPath);
     }
 
 
@@ -53,17 +53,17 @@ class Downloader
             EnsureOk(uri, response);
 #if (NETSTANDARD2_1)
             await using var httpStream = await response.Content.ReadAsStreamAsync();
-            var fileStream = FileHelpers.OpenWrite(targetPath);
+            var fileStream = await FileHelpers.SafeOpenWrite(targetPath);
             await httpStream.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
 #else
             using var httpStream = await response.Content.ReadAsStreamAsync();
-            using var fileStream = FileHelpers.OpenWrite(targetPath);
+            using var fileStream = await FileHelpers.SafeOpenWrite(targetPath);
             await httpStream.CopyToAsync(fileStream);
             await fileStream.FlushAsync();
 #endif
         }
-        return FileHelpers.OpenRead(targetPath);
+        return await FileHelpers.SafeOpenRead(targetPath);
     }
 
     static void EnsureOk(string uri, HttpResponseMessage response, string? content = null)
