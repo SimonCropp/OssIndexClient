@@ -1,4 +1,6 @@
-﻿static class PackageUrlBuilder
+﻿using OssIndexClient;
+
+static class PackageUrlBuilder
 {
     public static string Url(this Package package)
     {

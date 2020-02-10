@@ -5,10 +5,10 @@ Source File: /readme.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-# <img src="/src/icon.png" height="30px"> OSSIndexClient
+# <img src="/src/icon.png" height="30px"> OssIndexClient
 
-[![Build status](https://ci.appveyor.com/api/projects/status/3fpr1ngrmnicdiav?svg=true)](https://ci.appveyor.com/project/SimonCropp/ossindexclient)
-[![NuGet Status](https://img.shields.io/nuget/v/OSSIndexClient.svg)](https://www.nuget.org/packages/OSSIndexClient/)
+[![Build status](https://ci.appveyor.com/api/projects/status/41kf6ll7dbad35px?svg=true)](https://ci.appveyor.com/project/SimonCropp/ossindexclient)
+[![NuGet Status](https://img.shields.io/nuget/v/OssIndexClient.svg)](https://www.nuget.org/packages/OssIndexClient/)
 
 A .net client for OSSIndex (https://ossindex.sonatype.org/).
 
@@ -23,7 +23,7 @@ A .net client for OSSIndex (https://ossindex.sonatype.org/).
 
 ## NuGet package
 
-https://nuget.org/packages/OSSIndexClient/
+https://nuget.org/packages/OssIndexClient/
 
 
 ## Usage
@@ -31,7 +31,7 @@ https://nuget.org/packages/OSSIndexClient/
 <!-- snippet: GetReport -->
 <a id='snippet-getreport'/></a>
 ```cs
-using var ossIndexClient = new OSSIndex();
+using var ossIndexClient = new OssIndex();
 var report = await ossIndexClient.GetReport(
     new Package(
         type: "nuget",

@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using OSSIndexClient;
+using OssIndexClient;
 using Verify;
 using VerifyXunit;
 using Xunit;
@@ -11,7 +11,7 @@ public class Tests :
     [Fact]
     public async Task GetReport404()
     {
-        using var ossIndexClient = new OSSIndex();
+        using var ossIndexClient = new OssIndex();
         var report = await ossIndexClient.GetReport(
             new Package(
                 type: "nuget",
@@ -29,7 +29,7 @@ public class Tests :
 
         #region GetReport
 
-        using var ossIndexClient = new OSSIndex();
+        using var ossIndexClient = new OssIndex();
         var report = await ossIndexClient.GetReport(
             new Package(
                 type: "nuget",

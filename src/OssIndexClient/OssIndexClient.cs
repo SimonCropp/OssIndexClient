@@ -4,23 +4,23 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace OSSIndexClient
+namespace OssIndexClient
 {
-    public class OSSIndex :
+    public class OssIndex :
         IDisposable
     {
         HttpClient httpClient;
         bool isClientOwned;
         Downloader downloader;
 
-        public OSSIndex(HttpClient httpClient)
+        public OssIndex(HttpClient httpClient)
         {
             Guard.AgainstNull(httpClient, nameof(httpClient));
             this.httpClient = httpClient;
             downloader = new Downloader(httpClient);
         }
 
-        public OSSIndex() :
+        public OssIndex() :
             this(new HttpClient())
         {
             isClientOwned = true;

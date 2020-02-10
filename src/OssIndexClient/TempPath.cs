@@ -2,12 +2,13 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using OssIndexClient;
 
 static class TempPath
 {
     static char[] invalidPathChars = Path.GetInvalidPathChars();
 
-    static string tempDir = Path.Combine(Path.GetTempPath(), "OSSIndexClient");
+    static string tempDir = Path.Combine(Path.GetTempPath(), "OssIndexClient");
 
     public static string GetPath(IEnumerable<Package> packages)
     {

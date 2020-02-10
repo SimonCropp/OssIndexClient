@@ -1,16 +1,19 @@
-﻿public class Package
+﻿namespace OssIndexClient
 {
-    public Package(string type, string id, string version)
+    public class Package
     {
-        Guard.AgainstNull(type, nameof(type));
-        Guard.AgainstNull(id, nameof(id));
-        Guard.AgainstNull(version, nameof(version));
-        Type = type;
-        Id = id;
-        Version = version;
-    }
+        public Package(string type, string id, string version)
+        {
+            Guard.AgainstNull(type, nameof(type));
+            Guard.AgainstNull(id, nameof(id));
+            Guard.AgainstNull(version, nameof(version));
+            Type = type;
+            Id = id;
+            Version = version;
+        }
 
-    public string Type { get; }
-    public string Id { get; }
-    public string Version { get; }
+        public string Type { get; }
+        public string Id { get; }
+        public string Version { get; }
+    }
 }
