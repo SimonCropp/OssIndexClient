@@ -12,6 +12,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 A .net client for OSSIndex (https://ossindex.sonatype.org/).
 
+Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-ossindexclient?utm_source=nuget-ossindexclient&utm_medium=referral&utm_campaign=enterprise).
 
 <!-- toc -->
 ## Contents
