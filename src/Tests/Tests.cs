@@ -28,7 +28,7 @@ public class Tests :
     {
         var settings = new VerifySettings();
         settings.ModifySerialization(_ => _.DontScrubGuids());
-
+        settings.AutoVerify();
         #region GetReports
 
         using var ossIndexClient = new OssIndex();
