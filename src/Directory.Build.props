@@ -2,6 +2,7 @@
 <Project>
   <PropertyGroup>
     <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageTags>OSSIndex</PackageTags>
     <Description>A .net client for OSSIndex (https://ossindex.sonatype.org/).</Description>
   </PropertyGroup>
