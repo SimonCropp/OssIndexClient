@@ -1,14 +1,12 @@
 ﻿using System.Diagnostics;
 using System.Threading.Tasks;
 using OssIndexClient;
-using Verify;
+using VerifyTests;
 using VerifyXunit;
 using Xunit;
-using Xunit.Abstractions;
 
-
-public class Tests :
-    VerifyBase
+[UsesVerify]
+public class Tests
 {
     [Fact]
     public async Task GetReport404()
@@ -20,7 +18,7 @@ public class Tests :
                 name: "sdjhgfb",
                 version: "4.3.1"));
 
-        await Verify(report);
+        await Verifier.Verify(report);
     }
 
     [Fact]
@@ -51,7 +49,7 @@ public class Tests :
 
         #endregion
 
-        await Verify(reports, settings);
+        await Verifier.Verify(reports, settings);
     }
 
     [Fact]
@@ -75,11 +73,6 @@ public class Tests :
         }
         #endregion
 
-        await Verify(report, settings);
-    }
-
-    public Tests(ITestOutputHelper output) :
-        base(output)
-    {
+        await Verifier.Verify(report, settings);
     }
 }
