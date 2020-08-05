@@ -36,7 +36,7 @@ https://nuget.org/packages/OssIndexClient/
 ### Getting a report
 
 <!-- snippet: GetReport -->
-<a id='snippet-getreport'/></a>
+<a id='snippet-getreport'></a>
 ```cs
 using var ossIndexClient = new OssIndex();
 var report = await ossIndexClient.GetReport(
@@ -57,7 +57,7 @@ foreach (var vulnerability in report.Vulnerabilities)
 ### Getting multiple reports
 
 <!-- snippet: GetReports -->
-<a id='snippet-getreports'/></a>
+<a id='snippet-getreports'></a>
 ```cs
 using var ossIndexClient = new OssIndex();
 var reports = await ossIndexClient.GetReports(
@@ -84,7 +84,7 @@ foreach (var report in reports)
 ### Example report contents
 
 <!-- snippet: Tests.GetReport.verified.txt -->
-<a id='snippet-Tests.GetReport.verified.txt'/></a>
+<a id='snippet-Tests.GetReport.verified.txt'></a>
 ```txt
 {
   EcoSystem: 'nuget',
@@ -141,7 +141,7 @@ foreach (var report in reports)
 The supported [OSSIndex Package Ecosystems](https://ossindex.sonatype.org/doc/coordinates) are represented by an enum.
 
 <!-- snippet: EcoSystem -->
-<a id='snippet-ecosystem'/></a>
+<a id='snippet-ecosystem'></a>
 ```cs
 public enum EcoSystem
 {
