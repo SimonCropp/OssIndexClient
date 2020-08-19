@@ -7,31 +7,13 @@
     Reference: 'https://ossindex.sonatype.org/component/pkg:nuget/System.Net.Http@4.3.1',
     Vulnerabilities: [
       {
-        Id: '412e1f92-546e-465c-856b-40498da6fdeb',
-        Title: '[CVE-2017-0248] Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow...',
-        Description: 'Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow an attacker to bypass Enhanced Security Usage taggings when they present a certificate that is invalid for a specific use, aka ".NET Security Feature Bypass Vulnerability."',
-        CvssScore: 7.5,
-        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N',
-        Cve: 'CVE-2017-0248',
-        Reference: 'https://ossindex.sonatype.org/vuln/412e1f92-546e-465c-856b-40498da6fdeb'
-      },
-      {
-        Id: '1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f',
-        Title: '[CVE-2017-0256]  Improper Input Validation',
-        Description: 'A spoofing vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.',
-        CvssScore: 5.3,
-        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N',
-        Cve: 'CVE-2017-0256',
-        Reference: 'https://ossindex.sonatype.org/vuln/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f'
-      },
-      {
         Id: '1b5f855f-0a6a-4163-9bd8-62ca43b32bca',
         Title: '[CVE-2017-0249]  Improper Input Validation',
         Description: 'An elevation of privilege vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.',
         CvssScore: 7.3,
         CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L',
         Cve: 'CVE-2017-0249',
-        Reference: 'https://ossindex.sonatype.org/vuln/1b5f855f-0a6a-4163-9bd8-62ca43b32bca'
+        Reference: 'https://ossindex.sonatype.org/vuln/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http'
       },
       {
         Id: 'aa6df1e3-b193-4780-89f0-5a6a14b514a7',
@@ -40,7 +22,25 @@
         CvssScore: 7.5,
         CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N',
         Cve: 'CVE-2017-0247',
-        Reference: 'https://ossindex.sonatype.org/vuln/aa6df1e3-b193-4780-89f0-5a6a14b514a7'
+        Reference: 'https://ossindex.sonatype.org/vuln/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http'
+      },
+      {
+        Id: '1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f',
+        Title: '[CVE-2017-0256]  Improper Input Validation',
+        Description: 'A spoofing vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.',
+        CvssScore: 5.3,
+        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N',
+        Cve: 'CVE-2017-0256',
+        Reference: 'https://ossindex.sonatype.org/vuln/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http'
+      },
+      {
+        Id: '412e1f92-546e-465c-856b-40498da6fdeb',
+        Title: '[CVE-2017-0248] Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow...',
+        Description: 'Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow an attacker to bypass Enhanced Security Usage taggings when they present a certificate that is invalid for a specific use, aka ".NET Security Feature Bypass Vulnerability."',
+        CvssScore: 7.5,
+        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N',
+        Cve: 'CVE-2017-0248',
+        Reference: 'https://ossindex.sonatype.org/vuln/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http'
       }
     ]
   },
@@ -48,17 +48,44 @@
     EcoSystem: 'npm',
     Name: 'jquery',
     Version: '1.11.3',
-    Description: 'jQuery: The Write Less, Do More, JavaScript Library (packaged for Node.JS)',
+    Description: 'JavaScript library for DOM operations',
     Reference: 'https://ossindex.sonatype.org/component/pkg:npm/jquery@1.11.3',
     Vulnerabilities: [
       {
+        Id: '11b6563a-ead6-4040-83e5-455f36519d1b',
+        Title: '[CVE-2019-11358]  Improper Neutralization of Input During Web Page Generation ("Cross-site Scripting")',
+        Description: 'jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.',
+        CvssScore: 6.1,
+        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N',
+        Cve: 'CVE-2019-11358',
+        Reference: 'https://ossindex.sonatype.org/vuln/11b6563a-ead6-4040-83e5-455f36519d1b?component-type=npm&component-name=jquery'
+      },
+      {
+        Id: 'bb07990f-5984-4107-a7ee-27d0c09a1698',
+        Title: "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        Description: 'The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.',
+        CvssScore: 7.2,
+        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N',
+        Cwe: 'CWE-79',
+        Reference: 'https://ossindex.sonatype.org/vuln/bb07990f-5984-4107-a7ee-27d0c09a1698?component-type=npm&component-name=jquery'
+      },
+      {
+        Id: '4dc10b07-91de-4bd1-8f56-00d718a467a3',
+        Title: '[CVE-2020-11023] In jQuery versions greater than or equal to 1.0.3 and before 3.5.0, passing HTML...',
+        Description: "In jQuery versions greater than or equal to 1.0.3 and before 3.5.0, passing HTML containing <option> elements from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.",
+        CvssScore: 6.1,
+        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N',
+        Cve: 'CVE-2020-11023',
+        Reference: 'https://ossindex.sonatype.org/vuln/4dc10b07-91de-4bd1-8f56-00d718a467a3?component-type=npm&component-name=jquery'
+      },
+      {
         Id: '52f593c8-7729-435c-b9df-a7bb9ded8589',
-        Title: 'CWE-79: Improper Neutralization of Input During Web Page Generation (\'Cross-site Scripting\')',
+        Title: "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
         Description: 'The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.',
         CvssScore: 6.1,
         CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N',
         Cwe: 'CWE-79',
-        Reference: 'https://ossindex.sonatype.org/vuln/52f593c8-7729-435c-b9df-a7bb9ded8589'
+        Reference: 'https://ossindex.sonatype.org/vuln/52f593c8-7729-435c-b9df-a7bb9ded8589?component-type=npm&component-name=jquery'
       },
       {
         Id: '3b3ba2f8-9c2c-4afe-b593-75c6b3fd4bb7',
@@ -67,43 +94,25 @@
         CvssScore: 6.1,
         CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N',
         Cve: 'CVE-2015-9251',
-        Reference: 'https://ossindex.sonatype.org/vuln/3b3ba2f8-9c2c-4afe-b593-75c6b3fd4bb7'
-      },
-      {
-        Id: 'bb07990f-5984-4107-a7ee-27d0c09a1698',
-        Title: 'CWE-79: Improper Neutralization of Input During Web Page Generation (\'Cross-site Scripting\')',
-        Description: 'The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.',
-        CvssScore: 7.2,
-        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N',
-        Cwe: 'CWE-79',
-        Reference: 'https://ossindex.sonatype.org/vuln/bb07990f-5984-4107-a7ee-27d0c09a1698'
-      },
-      {
-        Id: '11b6563a-ead6-4040-83e5-455f36519d1b',
-        Title: '[CVE-2019-11358]  Improper Neutralization of Input During Web Page Generation ("Cross-site Scripting")',
-        Description: 'jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.',
-        CvssScore: 6.1,
-        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N',
-        Cve: 'CVE-2019-11358',
-        Reference: 'https://ossindex.sonatype.org/vuln/11b6563a-ead6-4040-83e5-455f36519d1b'
-      },
-      {
-        Id: '5143404a-0e8c-420a-aef1-dccfd1bb3ea4',
-        Title: 'CWE-79: Improper Neutralization of Input During Web Page Generation (\'Cross-site Scripting\')',
-        Description: 'The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.',
-        CvssScore: 6.1,
-        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N',
-        Cwe: 'CWE-79',
-        Reference: 'https://ossindex.sonatype.org/vuln/5143404a-0e8c-420a-aef1-dccfd1bb3ea4'
+        Reference: 'https://ossindex.sonatype.org/vuln/3b3ba2f8-9c2c-4afe-b593-75c6b3fd4bb7?component-type=npm&component-name=jquery'
       },
       {
         Id: 'ccbcd22c-ecdd-42c3-b76a-73eacbc40d98',
-        Title: 'CWE-79: Improper Neutralization of Input During Web Page Generation (\'Cross-site Scripting\')',
+        Title: "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
         Description: 'The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.',
         CvssScore: 6.1,
         CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N',
         Cwe: 'CWE-79',
-        Reference: 'https://ossindex.sonatype.org/vuln/ccbcd22c-ecdd-42c3-b76a-73eacbc40d98'
+        Reference: 'https://ossindex.sonatype.org/vuln/ccbcd22c-ecdd-42c3-b76a-73eacbc40d98?component-type=npm&component-name=jquery'
+      },
+      {
+        Id: '7ea698d9-d38b-4f6f-9a39-79b72d4fe248',
+        Title: '[CVE-2020-11022] In jQuery versions greater than or equal to 1.2 and before 3.5.0, passing HTML f...',
+        Description: "In jQuery versions greater than or equal to 1.2 and before 3.5.0, passing HTML from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.",
+        CvssScore: 6.1,
+        CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N',
+        Cve: 'CVE-2020-11022',
+        Reference: 'https://ossindex.sonatype.org/vuln/7ea698d9-d38b-4f6f-9a39-79b72d4fe248?component-type=npm&component-name=jquery'
       }
     ]
   }
