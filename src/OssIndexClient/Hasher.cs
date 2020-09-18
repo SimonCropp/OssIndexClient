@@ -15,7 +15,7 @@
                 hash2 = ((hash2 << 5) + hash2) ^ str[i + 1];
             }
 
-            return hash1 + (hash2 * 1566083941);
+            return hash1 + hash2 * 1566083941;
         }
     }
 }
