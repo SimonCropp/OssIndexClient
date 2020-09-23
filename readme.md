@@ -100,7 +100,7 @@ foreach (var report in reports)
       CvssScore: 7.5,
       CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N',
       Cve: 'CVE-2017-0248',
-      Reference: 'https://ossindex.sonatype.org/vuln/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http'
+      Reference: 'https://ossindex.sonatype.org/vuln/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration&utm_content='
     },
     {
       Id: '1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f',
@@ -109,7 +109,7 @@ foreach (var report in reports)
       CvssScore: 5.3,
       CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N',
       Cve: 'CVE-2017-0256',
-      Reference: 'https://ossindex.sonatype.org/vuln/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http'
+      Reference: 'https://ossindex.sonatype.org/vuln/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration&utm_content='
     },
     {
       Id: '1b5f855f-0a6a-4163-9bd8-62ca43b32bca',
@@ -118,7 +118,7 @@ foreach (var report in reports)
       CvssScore: 7.3,
       CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L',
       Cve: 'CVE-2017-0249',
-      Reference: 'https://ossindex.sonatype.org/vuln/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http'
+      Reference: 'https://ossindex.sonatype.org/vuln/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration&utm_content='
     },
     {
       Id: 'aa6df1e3-b193-4780-89f0-5a6a14b514a7',
@@ -127,7 +127,7 @@ foreach (var report in reports)
       CvssScore: 7.5,
       CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N',
       Cve: 'CVE-2017-0247',
-      Reference: 'https://ossindex.sonatype.org/vuln/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http'
+      Reference: 'https://ossindex.sonatype.org/vuln/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration&utm_content='
     }
   ]
 }
