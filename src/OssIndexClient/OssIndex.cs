@@ -18,12 +18,14 @@ namespace OssIndexClient
         {
             Guard.AgainstNull(httpClient, nameof(httpClient));
             this.httpClient = httpClient;
+            this.httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("OssIndexClient");
             downloader = new Downloader(httpClient);
         }
 
         public OssIndex() :
             this(new HttpClient())
         {
+
             isClientOwned = true;
         }
 

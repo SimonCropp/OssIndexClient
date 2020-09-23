@@ -14,7 +14,8 @@ class Downloader
     {
         this.httpClient = httpClient;
     }
-    private const string RequestContentType = "application/vnd.ossindex.component-report-request.v1+json";
+
+    const string RequestContentType = "application/vnd.ossindex.component-report-request.v1+json";
 
     public async Task<Stream> Post(string targetPath, string uri, string content)
     {
