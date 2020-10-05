@@ -50,7 +50,7 @@ foreach (var vulnerability in report.Vulnerabilities)
     Debug.WriteLine(vulnerability.Title);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L61-L74' title='File snippet `getreport` was extracted from'>snippet source</a> | <a href='#snippet-getreport' title='Navigate to start of snippet `getreport`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L61-L74' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -77,7 +77,7 @@ foreach (var report in reports)
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L30-L50' title='File snippet `getreports` was extracted from'>snippet source</a> | <a href='#snippet-getreports' title='Navigate to start of snippet `getreports`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L30-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -132,7 +132,7 @@ foreach (var report in reports)
   ]
 }
 ```
-<sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L45' title='File snippet `Tests.GetReport.verified.txt` was extracted from'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Navigate to start of snippet `Tests.GetReport.verified.txt`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L45' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -200,7 +200,7 @@ public enum EcoSystem
     gem,
 }
 ```
-<sup><a href='/src/OssIndexClient/EcoSystem.cs#L7-L66' title='File snippet `ecosystem` was extracted from'>snippet source</a> | <a href='#snippet-ecosystem' title='Navigate to start of snippet `ecosystem`'>anchor</a></sup>
+<sup><a href='/src/OssIndexClient/EcoSystem.cs#L7-L66' title='Snippet source file'>snippet source</a> | <a href='#snippet-ecosystem' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
