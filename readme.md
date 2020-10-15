@@ -29,7 +29,7 @@ https://nuget.org/packages/OssIndexClient/
 ### Getting a report
 
 <!-- snippet: GetReport -->
-<a id='4b88ab39'></a>
+<a id='snippet-getreport'></a>
 ```cs
 using var ossIndexClient = new OssIndex();
 var report = await ossIndexClient.GetReport(
@@ -43,14 +43,14 @@ foreach (var vulnerability in report.Vulnerabilities)
     Debug.WriteLine(vulnerability.Title);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L61-L74' title='Snippet source file'>snippet source</a> | <a href='#4b88ab39' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L61-L74' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 ### Getting multiple reports
 
 <!-- snippet: GetReports -->
-<a id='26cc00d3'></a>
+<a id='snippet-getreports'></a>
 ```cs
 using var ossIndexClient = new OssIndex();
 var reports = await ossIndexClient.GetReports(
@@ -70,14 +70,14 @@ foreach (var report in reports)
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L30-L50' title='Snippet source file'>snippet source</a> | <a href='#26cc00d3' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L30-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 ### Example report contents
 
 <!-- snippet: Tests.GetReport.verified.txt -->
-<a id='1a3a7a2c'></a>
+<a id='snippet-Tests.GetReport.verified.txt'></a>
 ```txt
 {
   EcoSystem: 'nuget',
@@ -125,7 +125,7 @@ foreach (var report in reports)
   ]
 }
 ```
-<sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L45' title='Snippet source file'>snippet source</a> | <a href='#1a3a7a2c' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L45' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -134,7 +134,7 @@ foreach (var report in reports)
 The supported [OSSIndex Package Ecosystems](https://ossindex.sonatype.org/doc/coordinates) are represented by an enum.
 
 <!-- snippet: EcoSystem -->
-<a id='a07d95e6'></a>
+<a id='snippet-ecosystem'></a>
 ```cs
 public enum EcoSystem
 {
@@ -193,7 +193,7 @@ public enum EcoSystem
     gem,
 }
 ```
-<sup><a href='/src/OssIndexClient/EcoSystem.cs#L7-L66' title='Snippet source file'>snippet source</a> | <a href='#a07d95e6' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/OssIndexClient/EcoSystem.cs#L7-L66' title='Snippet source file'>snippet source</a> | <a href='#snippet-ecosystem' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
