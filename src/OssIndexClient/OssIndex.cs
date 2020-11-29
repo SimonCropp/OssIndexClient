@@ -65,8 +65,8 @@ namespace OssIndexClient
 #else
             using var stream = await downloader.Get(targetPath, uri);
 #endif
-            var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(stream)!;
-            return ConvertReport(report);
+            var report = await JsonSerializer.DeserializeAsync<ComponentReportDto>(stream);
+            return ConvertReport(report!);
         }
 
         static ComponentReport ConvertReport(ComponentReportDto dto)
