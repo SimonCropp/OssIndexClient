@@ -19,7 +19,7 @@ static class FileHelpers
 
     public static FileStream OpenRead(string path)
     {
-        return new FileStream(path,
+        return new(path,
             FileMode.Open,
             FileAccess.Read,
             FileShare.Read,
@@ -42,7 +42,7 @@ static class FileHelpers
 
     public static FileStream OpenWrite(string filePath)
     {
-        return new FileStream(
+        return new(
             filePath,
             FileMode.Create,
             FileAccess.Write,

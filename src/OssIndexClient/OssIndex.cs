@@ -72,7 +72,7 @@ namespace OssIndexClient
         static ComponentReport ConvertReport(ComponentReportDto dto)
         {
             var package = CoordinatesHelper.Parse(dto.coordinates);
-            return new ComponentReport(
+            return new(
                 package.EcoSystem,
                 package.Namespace,
                 package.Name,
@@ -84,7 +84,7 @@ namespace OssIndexClient
 
         static Vulnerability ConvertVulnerability(VulnerabilityDto dto)
         {
-            return new Vulnerability(
+            return new(
                 dto.id,
                 dto.title,
                 dto.description,
