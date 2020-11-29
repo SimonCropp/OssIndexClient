@@ -80,47 +80,47 @@ foreach (var report in reports)
 <a id='snippet-Tests.GetReport.verified.txt'></a>
 ```txt
 {
-  EcoSystem: 'nuget',
-  Name: 'System.Net.Http',
-  Version: '4.3.1',
-  Description: 'This package provides a programming interface for modern HTTP applications. This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for processing HTTP messages.',
-  Reference: 'https://ossindex.sonatype.org/component/pkg:nuget/System.Net.Http@4.3.1',
+  EcoSystem: nuget,
+  Name: System.Net.Http,
+  Version: 4.3.1,
+  Description: This package provides a programming interface for modern HTTP applications. This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for processing HTTP messages.,
+  Reference: https://ossindex.sonatype.org/component/pkg:nuget/System.Net.Http@4.3.1?utm_source=ossindexclient&utm_medium=integration,
   Vulnerabilities: [
     {
-      Id: '412e1f92-546e-465c-856b-40498da6fdeb',
-      Title: '[CVE-2017-0248] Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow...',
-      Description: 'Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow an attacker to bypass Enhanced Security Usage taggings when they present a certificate that is invalid for a specific use, aka ".NET Security Feature Bypass Vulnerability."',
+      Id: 412e1f92-546e-465c-856b-40498da6fdeb,
+      Title: [CVE-2017-0248] Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow...,
+      Description: Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow an attacker to bypass Enhanced Security Usage taggings when they present a certificate that is invalid for a specific use, aka ".NET Security Feature Bypass Vulnerability.",
       CvssScore: 7.5,
-      CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N',
-      Cve: 'CVE-2017-0248',
-      Reference: 'https://ossindex.sonatype.org/vuln/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration&utm_content='
+      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
+      Cve: CVE-2017-0248,
+      Reference: https://ossindex.sonatype.org/vuln/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
     },
     {
-      Id: '1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f',
-      Title: '[CVE-2017-0256]  Improper Input Validation',
-      Description: 'A spoofing vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.',
+      Id: 1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f,
+      Title: [CVE-2017-0256]  Improper Input Validation,
+      Description: A spoofing vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
       CvssScore: 5.3,
-      CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N',
-      Cve: 'CVE-2017-0256',
-      Reference: 'https://ossindex.sonatype.org/vuln/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration&utm_content='
+      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,
+      Cve: CVE-2017-0256,
+      Reference: https://ossindex.sonatype.org/vuln/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
     },
     {
-      Id: '1b5f855f-0a6a-4163-9bd8-62ca43b32bca',
-      Title: '[CVE-2017-0249]  Improper Input Validation',
-      Description: 'An elevation of privilege vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.',
+      Id: 1b5f855f-0a6a-4163-9bd8-62ca43b32bca,
+      Title: [CVE-2017-0249]  Improper Input Validation,
+      Description: An elevation of privilege vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
       CvssScore: 7.3,
-      CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L',
-      Cve: 'CVE-2017-0249',
-      Reference: 'https://ossindex.sonatype.org/vuln/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration&utm_content='
+      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L,
+      Cve: CVE-2017-0249,
+      Reference: https://ossindex.sonatype.org/vuln/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
     },
     {
-      Id: 'aa6df1e3-b193-4780-89f0-5a6a14b514a7',
-      Title: '[CVE-2017-0247]  Improper Input Validation',
-      Description: 'A denial of service vulnerability exists when the ASP.NET Core fails to properly validate web requests. NOTE: Microsoft has not commented on third-party claims that the issue is that the TextEncoder.EncodeCore function in the System.Text.Encodings.Web package in ASP.NET Core Mvc before 1.0.4 and 1.1.x before 1.1.3 allows remote attackers to cause a denial of service by leveraging failure to properly calculate the length of 4-byte characters in the Unicode Non-Character range.',
+      Id: aa6df1e3-b193-4780-89f0-5a6a14b514a7,
+      Title: [CVE-2017-0247]  Improper Input Validation,
+      Description: A denial of service vulnerability exists when the ASP.NET Core fails to properly validate web requests. NOTE: Microsoft has not commented on third-party claims that the issue is that the TextEncoder.EncodeCore function in the System.Text.Encodings.Web package in ASP.NET Core Mvc before 1.0.4 and 1.1.x before 1.1.3 allows remote attackers to cause a denial of service by leveraging failure to properly calculate the length of 4-byte characters in the Unicode Non-Character range.,
       CvssScore: 7.5,
-      CvssVector: 'CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N',
-      Cve: 'CVE-2017-0247',
-      Reference: 'https://ossindex.sonatype.org/vuln/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration&utm_content='
+      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
+      Cve: CVE-2017-0247,
+      Reference: https://ossindex.sonatype.org/vuln/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
     }
   ]
 }

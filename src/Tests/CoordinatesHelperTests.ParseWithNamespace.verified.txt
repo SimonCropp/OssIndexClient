@@ -1,6 +1,6 @@
 {
-  EcoSystem: 'composer',
-  Namespace: 'bazalt',
-  Name: 'angular',
-  Version: '4.3.0'
+  EcoSystem: composer,
+  Namespace: bazalt,
+  Name: angular,
+  Version: 4.3.0
 }
