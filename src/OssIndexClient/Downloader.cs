@@ -23,7 +23,7 @@ class Downloader
         {
             return stream;
         }
-        using var httpContent = new StringContent(content, Encoding.UTF8, RequestContentType);
+        using StringContent httpContent = new(content, Encoding.UTF8, RequestContentType);
         using (var response = await httpClient.PostAsync(uri, httpContent))
         {
             EnsureOk(uri, response, content);

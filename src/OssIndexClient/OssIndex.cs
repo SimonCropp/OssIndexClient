@@ -19,7 +19,7 @@ namespace OssIndexClient
             Guard.AgainstNull(httpClient, nameof(httpClient));
             this.httpClient = httpClient;
             this.httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("OssIndexClient");
-            downloader = new Downloader(httpClient);
+            downloader = new(httpClient);
         }
 
         public OssIndex() :
@@ -50,7 +50,7 @@ namespace OssIndexClient
 #else
             using var stream = await downloader.Post(targetPath, uri,content);
 #endif
-            var reports = await JsonSerializer.DeserializeAsync<ComponentReportDto[]>(stream);
+            var reports = await JsonSerializer.DeserializeAsync<ComponentReportDto[]>(stream)!;
             return reports.Select(ConvertReport).ToList();
         }
 

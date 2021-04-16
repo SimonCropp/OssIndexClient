@@ -18,7 +18,7 @@ static class TempPath
 
     public static string GetPath(IEnumerable<Package> packages)
     {
-        var codes = new List<int>();
+        List<int> codes = new();
 
         foreach (var package in packages)
         {
@@ -45,7 +45,7 @@ static class TempPath
     {
         var packageDir = Path.Combine(tempDir, package.EcoSystem.ToString(), package.Name);
         Directory.CreateDirectory(packageDir);
-        var builder = new StringBuilder(packageDir + @"\");
+        StringBuilder builder = new(packageDir + @"\");
         foreach (var ch in package.Version.Where(ch => !invalidPathChars.Contains(ch)))
         {
             builder.Append(ch);

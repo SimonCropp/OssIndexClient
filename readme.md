@@ -31,9 +31,9 @@ https://nuget.org/packages/OssIndexClient/
 <!-- snippet: GetReport -->
 <a id='snippet-getreport'></a>
 ```cs
-using var ossIndexClient = new OssIndex();
+using OssIndex ossIndexClient = new();
 var report = await ossIndexClient.GetReport(
-    new Package(
+    new(
         ecoSystem: EcoSystem.nuget,
         name: "System.Net.Http",
         version: "4.3.1"));
@@ -43,7 +43,7 @@ foreach (var vulnerability in report.Vulnerabilities)
     Debug.WriteLine(vulnerability.Title);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L61-L74' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L59-L73' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -52,13 +52,13 @@ foreach (var vulnerability in report.Vulnerabilities)
 <!-- snippet: GetReports -->
 <a id='snippet-getreports'></a>
 ```cs
-using var ossIndexClient = new OssIndex();
+using OssIndex ossIndexClient = new();
 var reports = await ossIndexClient.GetReports(
-    new Package(
+    new(
         ecoSystem: EcoSystem.nuget,
         name: "System.Net.Http",
         version: "4.3.1"),
-    new Package(
+    new(
         ecoSystem: EcoSystem.npm,
         name: "jquery",
         version: "1.11.3"));
@@ -70,7 +70,7 @@ foreach (var report in reports)
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L30-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L31-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -93,7 +93,7 @@ foreach (var report in reports)
       CvssScore: 7.5,
       CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
       Cve: CVE-2017-0248,
-      Reference: https://ossindex.sonatype.org/vuln/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+      Reference: https://ossindex.sonatype.org/vulnerability/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
     },
     {
       Id: 1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f,
@@ -102,7 +102,7 @@ foreach (var report in reports)
       CvssScore: 5.3,
       CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,
       Cve: CVE-2017-0256,
-      Reference: https://ossindex.sonatype.org/vuln/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+      Reference: https://ossindex.sonatype.org/vulnerability/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
     },
     {
       Id: 1b5f855f-0a6a-4163-9bd8-62ca43b32bca,
@@ -111,7 +111,7 @@ foreach (var report in reports)
       CvssScore: 7.3,
       CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L,
       Cve: CVE-2017-0249,
-      Reference: https://ossindex.sonatype.org/vuln/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+      Reference: https://ossindex.sonatype.org/vulnerability/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
     },
     {
       Id: aa6df1e3-b193-4780-89f0-5a6a14b514a7,
@@ -120,7 +120,7 @@ foreach (var report in reports)
       CvssScore: 7.5,
       CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
       Cve: CVE-2017-0247,
-      Reference: https://ossindex.sonatype.org/vuln/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+      Reference: https://ossindex.sonatype.org/vulnerability/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
     }
   ]
 }

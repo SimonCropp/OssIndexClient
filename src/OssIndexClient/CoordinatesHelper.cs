@@ -20,14 +20,14 @@ static class CoordinatesHelper
         {
             var name = split[1];
             var version = split[2];
-            return new Package(ecoSystem, name, version);
+            return new(ecoSystem, name, version);
         }
         else
         {
             var @namespace = split[1];
             var name = split[2];
             var version = split[3];
-            return new Package(ecoSystem, @namespace, name, version);
+            return new(ecoSystem, @namespace, name, version);
         }
     }
 }
