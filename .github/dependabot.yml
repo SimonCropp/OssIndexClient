@@ -4,10 +4,4 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: "19:00"
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: Verify.Xunit
-    versions:
-    - 11.1.0
-    - 11.6.0
