@@ -5,19 +5,6 @@
 
 A .net client for OSSIndex (https://ossindex.sonatype.org/).
 
-Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-ossindexclient?utm_source=nuget-ossindexclient&utm_medium=referral&utm_campaign=enterprise).
-
-<!-- toc -->
-## Contents
-
-  * [Usage](#usage)
-    * [Getting a report](#getting-a-report)
-    * [Getting multiple reports](#getting-multiple-reports)
-    * [Example report contents](#example-report-contents)
-  * [Package Ecosystems](#package-ecosystems)
-  * [Notes](#notes)
-  * [Security contact information](#security-contact-information)<!-- endToc -->
-
 
 ## NuGet package
 
@@ -201,10 +188,6 @@ public enum EcoSystem
 
  * https://ossindex.sonatype.org/api/v3/component-report/pkg:nuget/System.Net.Http@4.3.1
 
-
-## Security contact information
-
-To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon
