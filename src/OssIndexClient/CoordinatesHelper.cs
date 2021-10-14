@@ -1,5 +1,4 @@
-﻿using System;
-using OssIndexClient;
+﻿using OssIndexClient;
 
 static class CoordinatesHelper
 {

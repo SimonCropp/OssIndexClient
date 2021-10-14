@@ -1,67 +1,66 @@
-﻿namespace OssIndexClient
+﻿namespace OssIndexClient;
+
+/// <summary>
+/// Package manager ecosystem. https://ossindex.sonatype.org/ecosystems
+/// </summary>
+
+#region EcoSystem
+
+public enum EcoSystem
 {
-    /// <summary>
-    /// Package manager ecosystem. https://ossindex.sonatype.org/ecosystems
-    /// </summary>
+    /// <summary>https://alpinelinux.org</summary>
+    alpine,
 
-    #region EcoSystem
+    /// <summary>https://bower.io</summary>
+    bower,
 
-    public enum EcoSystem
-    {
-        /// <summary>https://alpinelinux.org</summary>
-        alpine,
+    /// <summary>https://crates.io</summary>
+    cargo,
 
-        /// <summary>https://bower.io</summary>
-        bower,
+    /// <summary>https://chocolatey.org</summary>
+    chocolatey,
 
-        /// <summary>https://crates.io</summary>
-        cargo,
+    /// <summary>https://clojars.org</summary>
+    clojars,
 
-        /// <summary>https://chocolatey.org</summary>
-        chocolatey,
+    /// <summary>https://getcomposer.org</summary>
+    composer,
 
-        /// <summary>https://clojars.org</summary>
-        clojars,
+    /// <summary>https://conan.io</summary>
+    conan,
 
-        /// <summary>https://getcomposer.org</summary>
-        composer,
+    /// <summary>https://conda.io</summary>
+    conda,
 
-        /// <summary>https://conan.io</summary>
-        conan,
+    /// <summary>https://cran.r-project.org</summary>
+    cran,
 
-        /// <summary>https://conda.io</summary>
-        conda,
+    /// <summary>https://www.debian.org</summary>
+    deb,
 
-        /// <summary>https://cran.r-project.org</summary>
-        cran,
+    /// <summary>https://www.drupal.org</summary>
+    drupal,
 
-        /// <summary>https://www.debian.org</summary>
-        deb,
+    /// <summary>https://golang.org/pkg</summary>
+    golang,
 
-        /// <summary>https://www.drupal.org</summary>
-        drupal,
+    /// <summary>https://maven.apache.org</summary>
+    maven,
 
-        /// <summary>https://golang.org/pkg</summary>
-        golang,
+    /// <summary>https://www.npmjs.com</summary>
+    npm,
 
-        /// <summary>https://maven.apache.org</summary>
-        maven,
+    /// <summary>https://www.nuget.org</summary>
+    nuget,
 
-        /// <summary>https://www.npmjs.com</summary>
-        npm,
+    /// <summary>https://pypi.org</summary>
+    pypi,
 
-        /// <summary>https://www.nuget.org</summary>
-        nuget,
+    /// <summary>https://rpm.org</summary>
+    rpm,
 
-        /// <summary>https://pypi.org</summary>
-        pypi,
-
-        /// <summary>https://rpm.org</summary>
-        rpm,
-
-        /// <summary>https://rubygems.org</summary>
-        gem,
-    }
-
-    #endregion
+    /// <summary>https://rubygems.org</summary>
+    gem,
 }
+
+#endregion

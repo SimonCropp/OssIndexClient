@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-
-static class FileHelpers
+﻿static class FileHelpers
 {
     public static async Task<FileStream> SafeOpenRead(string path)
     {

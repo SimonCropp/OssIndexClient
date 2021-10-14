@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using System.Threading.Tasks;
-using OssIndexClient;
+﻿using OssIndexClient;
 using VerifyTests;
 using VerifyXunit;
 using Xunit;

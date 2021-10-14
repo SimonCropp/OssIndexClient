@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-class ComponentReportDto
+﻿class ComponentReportDto
 {
     public string coordinates { get; set; }= null!;
     public string description { get; set; } = null!;
