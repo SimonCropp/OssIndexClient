@@ -30,7 +30,7 @@ foreach (var vulnerability in report.Vulnerabilities)
     Debug.WriteLine(vulnerability.Title);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L59-L73' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L57-L71' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -57,7 +57,7 @@ foreach (var report in reports)
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L31-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L29-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
