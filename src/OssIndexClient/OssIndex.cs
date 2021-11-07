@@ -19,7 +19,7 @@ public class OssIndex :
     }
 
     public OssIndex() :
-        this(new HttpClient())
+        this(new())
     {
 
         isClientOwned = true;
@@ -42,12 +42,12 @@ public class OssIndex :
             });
         var uri = "https://ossindex.sonatype.org/api/v3/component-report";
 #if NETSTANDARD2_1
-            await using var stream = await downloader.Post(targetPath, uri, content);
+        await using var stream = await downloader.Post(targetPath, uri, content);
 #else
         using var stream = await downloader.Post(targetPath, uri,content);
 #endif
-        var reports = await JsonSerializer.DeserializeAsync<ComponentReportDto[]>(stream)!;
-        return reports.Select(ConvertReport).ToList();
+        var reports = await JsonSerializer.DeserializeAsync<ComponentReportDto[]>(stream);
+        return reports!.Select(ConvertReport).ToList();
     }
 
     public virtual async Task<ComponentReport> GetReport(Package package)
@@ -57,7 +57,7 @@ public class OssIndex :
 
         var uri = $"https://ossindex.sonatype.org/api/v3/component-report/{package.Coordinates()}";
 #if NETSTANDARD2_1
-            await using var stream = await downloader.Get(targetPath, uri);
+        await using var stream = await downloader.Get(targetPath, uri);
 #else
         using var stream = await downloader.Get(targetPath, uri);
 #endif

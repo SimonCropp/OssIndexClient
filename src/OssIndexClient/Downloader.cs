@@ -72,11 +72,11 @@ class Downloader
 
         if (content == null)
         {
-            throw new Exception($@"Invalid HTTP response: {response.StatusCode}.
+            throw new($@"Invalid HTTP response: {response.StatusCode}.
 Uri:{uri}");
         }
 
-        throw new Exception($@"Invalid HTTP response: {response.StatusCode}.
+        throw new($@"Invalid HTTP response: {response.StatusCode}.
 Uri:{uri}
 Content: {content}");
     }
