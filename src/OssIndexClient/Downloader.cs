@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Net;
+using System.Net.Http;
 
 class Downloader
 {
@@ -18,7 +19,7 @@ class Downloader
         {
             return stream;
         }
-        using StringContent httpContent = new(content, Encoding.UTF8, RequestContentType);
+        using var httpContent = new StringContent(content, Encoding.UTF8, RequestContentType);
         using (var response = await httpClient.PostAsync(uri, httpContent))
         {
             EnsureOk(uri, response, content);
