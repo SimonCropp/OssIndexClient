@@ -16,7 +16,7 @@ public class Tests
                 name: "sdjhgfb",
                 version: "4.3.1"));
 
-        await Verifier.Verify(report);
+        await Verify(report);
     }
 
     [Fact]
@@ -48,7 +48,7 @@ public class Tests
 
         #endregion
 
-        await Verifier.Verify(reports, settings);
+        await Verify(reports, settings);
     }
 
     [Fact]
@@ -70,7 +70,7 @@ public class Tests
 
         #endregion
 
-        await Verifier.Verify(report)
+        await Verify(report)
             .ModifySerialization(_ => _.DontScrubGuids());
     }
 }
