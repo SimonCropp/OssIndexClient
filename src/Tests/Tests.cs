@@ -23,7 +23,7 @@ public class Tests
     public async Task GetReports()
     {
         VerifySettings settings = new();
-        settings.ModifySerialization(_ => _.DontScrubGuids());
+        settings.DontScrubGuids();
         settings.AutoVerify();
 
         #region GetReports
@@ -70,7 +70,6 @@ public class Tests
 
         #endregion
 
-        await Verify(report)
-            .ModifySerialization(_ => _.DontScrubGuids());
+        await Verify(report).DontScrubGuids();
     }
 }
