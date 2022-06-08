@@ -18,7 +18,7 @@ https://nuget.org/packages/OssIndexClient/
 <!-- snippet: GetReport -->
 <a id='snippet-getreport'></a>
 ```cs
-using OssIndex ossIndexClient = new();
+using var ossIndexClient = new OssIndex();
 var report = await ossIndexClient.GetReport(
     new(
         ecoSystem: EcoSystem.nuget,
@@ -30,7 +30,7 @@ foreach (var vulnerability in report.Vulnerabilities)
     Debug.WriteLine(vulnerability.Title);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L57-L71' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L54-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -39,7 +39,7 @@ foreach (var vulnerability in report.Vulnerabilities)
 <!-- snippet: GetReports -->
 <a id='snippet-getreports'></a>
 ```cs
-using OssIndex ossIndexClient = new();
+using var ossIndexClient = new OssIndex();
 var reports = await ossIndexClient.GetReports(
     new(
         ecoSystem: EcoSystem.nuget,
@@ -57,7 +57,7 @@ foreach (var report in reports)
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L29-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L26-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -74,45 +74,67 @@ foreach (var report in reports)
   Reference: https://ossindex.sonatype.org/component/pkg:nuget/System.Net.Http@4.3.1?utm_source=ossindexclient&utm_medium=integration,
   Vulnerabilities: [
     {
-      Id: 412e1f92-546e-465c-856b-40498da6fdeb,
-      Title: [CVE-2017-0248] Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow...,
+      Id: CVE-2017-0248,
+      Title: [CVE-2017-0248] CWE-295: Improper Certificate Validation,
       Description: Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow an attacker to bypass Enhanced Security Usage taggings when they present a certificate that is invalid for a specific use, aka ".NET Security Feature Bypass Vulnerability.",
       CvssScore: 7.5,
       CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
       Cve: CVE-2017-0248,
-      Reference: https://ossindex.sonatype.org/vulnerability/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+      Cwe: CWE-295,
+      Reference: https://ossindex.sonatype.org/vulnerability/CVE-2017-0248?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+      ExternalReferences: [
+        http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0248,
+        https://github.com/dotnet/corefx/issues/19535,
+        https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0248
+      ]
     },
     {
-      Id: 1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f,
-      Title: [CVE-2017-0256]  Improper Input Validation,
-      Description: A spoofing vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
-      CvssScore: 5.3,
-      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,
-      Cve: CVE-2017-0256,
-      Reference: https://ossindex.sonatype.org/vulnerability/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+      Id: CVE-2018-8292,
+      Title: [CVE-2018-8292] CWE-200: Information Exposure,
+      Description: An information disclosure vulnerability exists in .NET Core when authentication information is inadvertently exposed in a redirect, aka ".NET Core Information Disclosure Vulnerability." This affects .NET Core 2.1, .NET Core 1.0, .NET Core 1.1, PowerShell Core 6.0.,
+      CvssScore: 7.5,
+      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,
+      Cve: CVE-2018-8292,
+      Cwe: CWE-200,
+      Reference: https://ossindex.sonatype.org/vulnerability/CVE-2018-8292?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+      ExternalReferences: [
+        http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-8292,
+        https://github.com/dotnet/announcements/issues/88,
+        https://github.com/dotnet/corefx/issues/32730
+      ]
     },
     {
-      Id: 1b5f855f-0a6a-4163-9bd8-62ca43b32bca,
-      Title: [CVE-2017-0249]  Improper Input Validation,
+      Id: CVE-2017-0249,
+      Title: [CVE-2017-0249] CWE-20: Improper Input Validation,
       Description: An elevation of privilege vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
       CvssScore: 7.3,
       CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L,
       Cve: CVE-2017-0249,
-      Reference: https://ossindex.sonatype.org/vulnerability/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+      Cwe: CWE-20,
+      Reference: https://ossindex.sonatype.org/vulnerability/CVE-2017-0249?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+      ExternalReferences: [
+        http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0249,
+        https://github.com/aspnet/Announcements/issues/239
+      ]
     },
     {
-      Id: aa6df1e3-b193-4780-89f0-5a6a14b514a7,
-      Title: [CVE-2017-0247]  Improper Input Validation,
-      Description: A denial of service vulnerability exists when the ASP.NET Core fails to properly validate web requests. NOTE: Microsoft has not commented on third-party claims that the issue is that the TextEncoder.EncodeCore function in the System.Text.Encodings.Web package in ASP.NET Core Mvc before 1.0.4 and 1.1.x before 1.1.3 allows remote attackers to cause a denial of service by leveraging failure to properly calculate the length of 4-byte characters in the Unicode Non-Character range.,
-      CvssScore: 7.5,
-      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
-      Cve: CVE-2017-0247,
-      Reference: https://ossindex.sonatype.org/vulnerability/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+      Id: CVE-2017-0256,
+      Title: [CVE-2017-0256] CWE-20: Improper Input Validation,
+      Description: A spoofing vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
+      CvssScore: 5.3,
+      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,
+      Cve: CVE-2017-0256,
+      Cwe: CWE-20,
+      Reference: https://ossindex.sonatype.org/vulnerability/CVE-2017-0256?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+      ExternalReferences: [
+        http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0256,
+        https://github.com/aspnet/Announcements/issues/239
+      ]
     }
   ]
 }
 ```
-<sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L45' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.GetReport.verified.txt#L1-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.GetReport.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

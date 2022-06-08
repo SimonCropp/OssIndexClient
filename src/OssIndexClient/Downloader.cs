@@ -1,15 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Net;
-using System.Net.Http;
 
 class Downloader
 {
     HttpClient httpClient;
 
-    public Downloader(HttpClient httpClient)
-    {
+    public Downloader(HttpClient httpClient) =>
         this.httpClient = httpClient;
-    }
 
     const string RequestContentType = "application/vnd.ossindex.component-report-request.v1+json";
 

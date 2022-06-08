@@ -13,15 +13,8 @@
         }
     }
 
-    public static FileStream OpenRead(string path)
-    {
-        return new(path,
-            FileMode.Open,
-            FileAccess.Read,
-            FileShare.Read,
-            bufferSize: 4096,
-            useAsync: true);
-    }
+    public static FileStream OpenRead(string path) =>
+        new(path, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize: 4096, useAsync: true);
 
     public static async Task<FileStream> SafeOpenWrite(string path)
     {
@@ -36,14 +29,6 @@
         }
     }
 
-    public static FileStream OpenWrite(string filePath)
-    {
-        return new(
-            filePath,
-            FileMode.Create,
-            FileAccess.Write,
-            FileShare.None,
-            bufferSize: 4096,
-            useAsync: true);
-    }
+    public static FileStream OpenWrite(string filePath) =>
+        new(filePath, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize: 4096, useAsync: true);
 }

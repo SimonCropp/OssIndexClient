@@ -1,5 +1,4 @@
-﻿using System.Net.Http;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace OssIndexClient;
 
@@ -19,16 +18,11 @@ public class OssIndex :
     }
 
     public OssIndex() :
-        this(new())
-    {
-
+        this(new()) =>
         isClientOwned = true;
-    }
 
-    public virtual Task<IReadOnlyList<ComponentReport>> GetReports(params Package[] packages)
-    {
-        return GetReports((IEnumerable<Package>) packages);
-    }
+    public virtual Task<IReadOnlyList<ComponentReport>> GetReports(params Package[] packages) =>
+        GetReports((IEnumerable<Package>) packages);
 
     public virtual async Task<IReadOnlyList<ComponentReport>> GetReports(IEnumerable<Package> packages)
     {
@@ -78,19 +72,8 @@ public class OssIndex :
             dto.vulnerabilities.Select(ConvertVulnerability).ToList());
     }
 
-    static Vulnerability ConvertVulnerability(VulnerabilityDto dto)
-    {
-        return new(
-            dto.id,
-            dto.title,
-            dto.description,
-            dto.cvssScore,
-            dto.cvssVector,
-            dto.cve,
-            dto.cwe,
-            dto.reference,
-            dto.versionRanges);
-    }
+    static Vulnerability ConvertVulnerability(VulnerabilityDto dto) =>
+        new(dto.id, dto.title, dto.description, dto.cvssScore, dto.cvssVector, dto.cve, dto.cwe, dto.reference, dto.versionRanges, dto.externalReferences);
 
     public void Dispose()
     {

@@ -1,4 +1,4 @@
-﻿[
+[
   {
     EcoSystem: nuget,
     Name: System.Net.Http,
@@ -7,40 +7,62 @@
     Reference: https://ossindex.sonatype.org/component/pkg:nuget/System.Net.Http@4.3.1?utm_source=ossindexclient&utm_medium=integration,
     Vulnerabilities: [
       {
-        Id: 412e1f92-546e-465c-856b-40498da6fdeb,
-        Title: [CVE-2017-0248] Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow...,
+        Id: CVE-2017-0248,
+        Title: [CVE-2017-0248] CWE-295: Improper Certificate Validation,
         Description: Microsoft .NET Framework 2.0, 3.5, 3.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 and 4.7 allow an attacker to bypass Enhanced Security Usage taggings when they present a certificate that is invalid for a specific use, aka ".NET Security Feature Bypass Vulnerability.",
         CvssScore: 7.5,
         CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
         Cve: CVE-2017-0248,
-        Reference: https://ossindex.sonatype.org/vulnerability/412e1f92-546e-465c-856b-40498da6fdeb?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+        Cwe: CWE-295,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2017-0248?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0248,
+          https://github.com/dotnet/corefx/issues/19535,
+          https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0248
+        ]
       },
       {
-        Id: 1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f,
-        Title: [CVE-2017-0256]  Improper Input Validation,
-        Description: A spoofing vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
-        CvssScore: 5.3,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,
-        Cve: CVE-2017-0256,
-        Reference: https://ossindex.sonatype.org/vulnerability/1cc96f1c-2dac-4ec4-9a1b-56e63e27ce5f?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+        Id: CVE-2018-8292,
+        Title: [CVE-2018-8292] CWE-200: Information Exposure,
+        Description: An information disclosure vulnerability exists in .NET Core when authentication information is inadvertently exposed in a redirect, aka ".NET Core Information Disclosure Vulnerability." This affects .NET Core 2.1, .NET Core 1.0, .NET Core 1.1, PowerShell Core 6.0.,
+        CvssScore: 7.5,
+        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,
+        Cve: CVE-2018-8292,
+        Cwe: CWE-200,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2018-8292?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-8292,
+          https://github.com/dotnet/announcements/issues/88,
+          https://github.com/dotnet/corefx/issues/32730
+        ]
       },
       {
-        Id: 1b5f855f-0a6a-4163-9bd8-62ca43b32bca,
-        Title: [CVE-2017-0249]  Improper Input Validation,
+        Id: CVE-2017-0249,
+        Title: [CVE-2017-0249] CWE-20: Improper Input Validation,
         Description: An elevation of privilege vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
         CvssScore: 7.3,
         CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L,
         Cve: CVE-2017-0249,
-        Reference: https://ossindex.sonatype.org/vulnerability/1b5f855f-0a6a-4163-9bd8-62ca43b32bca?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+        Cwe: CWE-20,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2017-0249?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0249,
+          https://github.com/aspnet/Announcements/issues/239
+        ]
       },
       {
-        Id: aa6df1e3-b193-4780-89f0-5a6a14b514a7,
-        Title: [CVE-2017-0247]  Improper Input Validation,
-        Description: A denial of service vulnerability exists when the ASP.NET Core fails to properly validate web requests. NOTE: Microsoft has not commented on third-party claims that the issue is that the TextEncoder.EncodeCore function in the System.Text.Encodings.Web package in ASP.NET Core Mvc before 1.0.4 and 1.1.x before 1.1.3 allows remote attackers to cause a denial of service by leveraging failure to properly calculate the length of 4-byte characters in the Unicode Non-Character range.,
-        CvssScore: 7.5,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
-        Cve: CVE-2017-0247,
-        Reference: https://ossindex.sonatype.org/vulnerability/aa6df1e3-b193-4780-89f0-5a6a14b514a7?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration
+        Id: CVE-2017-0256,
+        Title: [CVE-2017-0256] CWE-20: Improper Input Validation,
+        Description: A spoofing vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
+        CvssScore: 5.3,
+        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,
+        Cve: CVE-2017-0256,
+        Cwe: CWE-20,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2017-0256?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0256,
+          https://github.com/aspnet/Announcements/issues/239
+        ]
       }
     ]
   },
@@ -52,67 +74,29 @@
     Reference: https://ossindex.sonatype.org/component/pkg:npm/jquery@1.11.3?utm_source=ossindexclient&utm_medium=integration,
     Vulnerabilities: [
       {
-        Id: 52f593c8-7729-435c-b9df-a7bb9ded8589,
-        Title: CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
-        Description: The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.,
-        CvssScore: 6.1,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
-        Cwe: CWE-79,
-        Reference: https://ossindex.sonatype.org/vulnerability/52f593c8-7729-435c-b9df-a7bb9ded8589?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration
-      },
-      {
-        Id: 3b3ba2f8-9c2c-4afe-b593-75c6b3fd4bb7,
-        Title: [CVE-2015-9251]  Improper Neutralization of Input During Web Page Generation ("Cross-site Scripting"),
-        Description: jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS) attacks when a cross-domain Ajax request is performed without the dataType option, causing text/javascript responses to be executed.,
-        CvssScore: 6.1,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
-        Cve: CVE-2015-9251,
-        Reference: https://ossindex.sonatype.org/vulnerability/3b3ba2f8-9c2c-4afe-b593-75c6b3fd4bb7?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration
-      },
-      {
-        Id: 11b6563a-ead6-4040-83e5-455f36519d1b,
-        Title: [CVE-2019-11358]  Improper Neutralization of Input During Web Page Generation ("Cross-site Scripting"),
-        Description: jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.,
-        CvssScore: 6.1,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
-        Cve: CVE-2019-11358,
-        Reference: https://ossindex.sonatype.org/vulnerability/11b6563a-ead6-4040-83e5-455f36519d1b?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration
-      },
-      {
-        Id: 4dc10b07-91de-4bd1-8f56-00d718a467a3,
-        Title: [CVE-2020-11023] In jQuery versions greater than or equal to 1.0.3 and before 3.5.0, passing HTML...,
+        Id: CVE-2020-11023,
+        Title: [CVE-2020-11023] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
         Description: In jQuery versions greater than or equal to 1.0.3 and before 3.5.0, passing HTML containing <option> elements from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.,
         CvssScore: 6.1,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
+        CvssVector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
         Cve: CVE-2020-11023,
-        Reference: https://ossindex.sonatype.org/vulnerability/4dc10b07-91de-4bd1-8f56-00d718a467a3?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration
-      },
-      {
-        Id: bb07990f-5984-4107-a7ee-27d0c09a1698,
-        Title: CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
-        Description: The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.,
-        CvssScore: 7.2,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N,
         Cwe: CWE-79,
-        Reference: https://ossindex.sonatype.org/vulnerability/bb07990f-5984-4107-a7ee-27d0c09a1698?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2020-11023?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-11023,
+          https://jquery.com/upgrade-guide/3.5/,
+          https://github.com/advisories/GHSA-jpcq-cgw6-v4j6
+        ]
       },
       {
-        Id: ccbcd22c-ecdd-42c3-b76a-73eacbc40d98,
-        Title: CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
-        Description: The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.,
-        CvssScore: 6.1,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
-        Cwe: CWE-79,
-        Reference: https://ossindex.sonatype.org/vulnerability/ccbcd22c-ecdd-42c3-b76a-73eacbc40d98?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration
-      },
-      {
-        Id: 7ea698d9-d38b-4f6f-9a39-79b72d4fe248,
-        Title: [CVE-2020-11022] In jQuery versions greater than or equal to 1.2 and before 3.5.0, passing HTML f...,
-        Description: In jQuery versions greater than or equal to 1.2 and before 3.5.0, passing HTML from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.,
-        CvssScore: 6.1,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
-        Cve: CVE-2020-11022,
-        Reference: https://ossindex.sonatype.org/vulnerability/7ea698d9-d38b-4f6f-9a39-79b72d4fe248?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration
+        Id: sonatype-2019-0115,
+        Title: 4 vulnerabilities found,
+        Description: 4 non-CVE vulnerabilities found. To see more details, please create a free account at https://ossindex.sonatype.org/ and request for this information using your registered account,
+        CvssScore: 7.5,
+        CvssVector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
+        Cve: sonatype-2019-0115,
+        Cwe: CWE-699,
+        Reference: https://ossindex.sonatype.org
       }
     ]
   }

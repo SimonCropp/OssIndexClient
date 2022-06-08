@@ -1,7 +1,4 @@
 ﻿using OssIndexClient;
-using VerifyTests;
-using VerifyXunit;
-using Xunit;
 
 [UsesVerify]
 public class Tests
@@ -9,7 +6,7 @@ public class Tests
     [Fact]
     public async Task GetReport404()
     {
-        using OssIndex ossIndexClient = new();
+        using var ossIndexClient = new OssIndex();
         var report = await ossIndexClient.GetReport(
             new(
                 ecoSystem: EcoSystem.nuget,
@@ -22,13 +19,13 @@ public class Tests
     [Fact]
     public async Task GetReports()
     {
-        VerifySettings settings = new();
+        var settings = new VerifySettings();
         settings.DontScrubGuids();
         settings.AutoVerify();
 
         #region GetReports
 
-        using OssIndex ossIndexClient = new();
+        using var ossIndexClient = new OssIndex();
         var reports = await ossIndexClient.GetReports(
             new(
                 ecoSystem: EcoSystem.nuget,
@@ -56,7 +53,7 @@ public class Tests
     {
         #region GetReport
 
-        using OssIndex ossIndexClient = new();
+        using var ossIndexClient = new OssIndex();
         var report = await ossIndexClient.GetReport(
             new(
                 ecoSystem: EcoSystem.nuget,

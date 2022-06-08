@@ -7,14 +7,12 @@ static class TempPath
     static string tempDir = Path.Combine(Path.GetTempPath(), "OssIndexClient");
     static string combinedDir = Path.Combine(tempDir, "combined");
 
-    static TempPath()
-    {
+    static TempPath() =>
         Directory.CreateDirectory(combinedDir);
-    }
 
     public static string GetPath(IEnumerable<Package> packages)
     {
-        List<int> codes = new();
+        var codes = new List<int>();
 
         foreach (var package in packages)
         {
@@ -41,7 +39,7 @@ static class TempPath
     {
         var packageDir = Path.Combine(tempDir, package.EcoSystem.ToString(), package.Name);
         Directory.CreateDirectory(packageDir);
-        StringBuilder builder = new(packageDir + @"\");
+        var builder = new StringBuilder(packageDir + @"\");
         foreach (var ch in package.Version.Where(ch => !invalidPathChars.Contains(ch)))
         {
             builder.Append(ch);
