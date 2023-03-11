@@ -89,21 +89,6 @@ foreach (var report in reports)
       ]
     },
     {
-      Id: CVE-2018-8292,
-      Title: [CVE-2018-8292] CWE-200: Information Exposure,
-      Description: An information disclosure vulnerability exists in .NET Core when authentication information is inadvertently exposed in a redirect, aka ".NET Core Information Disclosure Vulnerability." This affects .NET Core 2.1, .NET Core 1.0, .NET Core 1.1, PowerShell Core 6.0.,
-      CvssScore: 7.5,
-      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,
-      Cve: CVE-2018-8292,
-      Cwe: CWE-200,
-      Reference: https://ossindex.sonatype.org/vulnerability/CVE-2018-8292?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
-      ExternalReferences: [
-        http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-8292,
-        https://github.com/dotnet/announcements/issues/88,
-        https://github.com/dotnet/corefx/issues/32730
-      ]
-    },
-    {
       Id: CVE-2017-0249,
       Title: [CVE-2017-0249] CWE-20: Improper Input Validation,
       Description: An elevation of privilege vulnerability exists when the ASP.NET Core fails to properly sanitize web requests.,
@@ -129,6 +114,21 @@ foreach (var report in reports)
       ExternalReferences: [
         http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0256,
         https://github.com/aspnet/Announcements/issues/239
+      ]
+    },
+    {
+      Id: CVE-2018-8292,
+      Title: [CVE-2018-8292] CWE-200: Information Exposure,
+      Description: An information disclosure vulnerability exists in .NET Core when authentication information is inadvertently exposed in a redirect, aka ".NET Core Information Disclosure Vulnerability." This affects .NET Core 2.1, .NET Core 1.0, .NET Core 1.1, PowerShell Core 6.0.,
+      CvssScore: 7.5,
+      CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,
+      Cve: CVE-2018-8292,
+      Cwe: CWE-200,
+      Reference: https://ossindex.sonatype.org/vulnerability/CVE-2018-8292?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+      ExternalReferences: [
+        http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-8292,
+        https://github.com/dotnet/announcements/issues/88,
+        https://github.com/dotnet/corefx/issues/32730
       ]
     }
   ]

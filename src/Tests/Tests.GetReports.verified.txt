@@ -1,4 +1,4 @@
-[
+﻿[
   {
     EcoSystem: nuget,
     Name: System.Net.Http,
@@ -19,21 +19,6 @@
           http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0248,
           https://github.com/dotnet/corefx/issues/19535,
           https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0248
-        ]
-      },
-      {
-        Id: CVE-2018-8292,
-        Title: [CVE-2018-8292] CWE-200: Information Exposure,
-        Description: An information disclosure vulnerability exists in .NET Core when authentication information is inadvertently exposed in a redirect, aka ".NET Core Information Disclosure Vulnerability." This affects .NET Core 2.1, .NET Core 1.0, .NET Core 1.1, PowerShell Core 6.0.,
-        CvssScore: 7.5,
-        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,
-        Cve: CVE-2018-8292,
-        Cwe: CWE-200,
-        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2018-8292?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
-        ExternalReferences: [
-          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-8292,
-          https://github.com/dotnet/announcements/issues/88,
-          https://github.com/dotnet/corefx/issues/32730
         ]
       },
       {
@@ -63,6 +48,21 @@
           http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-0256,
           https://github.com/aspnet/Announcements/issues/239
         ]
+      },
+      {
+        Id: CVE-2018-8292,
+        Title: [CVE-2018-8292] CWE-200: Information Exposure,
+        Description: An information disclosure vulnerability exists in .NET Core when authentication information is inadvertently exposed in a redirect, aka ".NET Core Information Disclosure Vulnerability." This affects .NET Core 2.1, .NET Core 1.0, .NET Core 1.1, PowerShell Core 6.0.,
+        CvssScore: 7.5,
+        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,
+        Cve: CVE-2018-8292,
+        Cwe: CWE-200,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2018-8292?component-type=nuget&component-name=System.Net.Http&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-8292,
+          https://github.com/dotnet/announcements/issues/88,
+          https://github.com/dotnet/corefx/issues/32730
+        ]
       }
     ]
   },
@@ -73,6 +73,25 @@
     Description: JavaScript library for DOM operations,
     Reference: https://ossindex.sonatype.org/component/pkg:npm/jquery@1.11.3?utm_source=ossindexclient&utm_medium=integration,
     Vulnerabilities: [
+      {
+        Id: CVE-2019-11358,
+        Title: [CVE-2019-11358] CWE-1321,
+        Description:
+jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.
+
+Sonatype's research suggests that this CVE's details differ from those defined at NVD. See https://ossindex.sonatype.org/vulnerability/CVE-2019-11358 for details,
+        CvssScore: 6.1,
+        CvssVector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
+        Cve: CVE-2019-11358,
+        Cwe: CWE-1321,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2019-11358?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-11358,
+          https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/,
+          https://github.com/cbeust/testng/issues/2150,
+          https://github.com/jquery/jquery/pull/4333
+        ]
+      },
       {
         Id: CVE-2020-11023,
         Title: [CVE-2020-11023] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
@@ -89,14 +108,50 @@
         ]
       },
       {
-        Id: sonatype-2019-0115,
-        Title: 4 vulnerabilities found,
-        Description: 4 non-CVE vulnerabilities found. To see more details, please create a free account at https://ossindex.sonatype.org/ and request for this information using your registered account,
-        CvssScore: 7.5,
-        CvssVector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,
-        Cve: sonatype-2019-0115,
+        Id: sonatype-2016-0107,
+        Title: [sonatype-2016-0107] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
+        Description:
+jQuery - Cross-Site Scripting (XSS) [CVE-2015-9251]
+
+The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.,
+        CvssScore: 6.1,
+        CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
+        Cve: CVE-2015-9251,
+        Cwe: CWE-79,
+        Reference: https://ossindex.sonatype.org/vulnerability/sonatype-2016-0107?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          https://github.com/jquery/jquery/issues/2432,
+          https://github.com/jquery/jquery/pull/2588,
+          https://bugzilla.redhat.com/show_bug.cgi?id=1399546
+        ]
+      },
+      {
+        Id: sonatype-2020-0187,
+        Title: [sonatype-2020-0187] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
+        Description:
+jQuery - Cross-Site Scripting (XSS)
+
+The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.,
+        CvssScore: 6.1,
+        CvssVector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
+        Cve: CVE-2020-11022,
+        Cwe: CWE-79,
+        Reference: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0187?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/,
+          https://github.com/jquery/jquery/pull/4642,
+          https://github.com/jquery/jquery/security/advisories/GHSA-gxr4-xjj5-5px2,
+          https://jquery.com/upgrade-guide/3.5/
+        ]
+      },
+      {
+        Id: sonatype-2014-0026,
+        Title: 1 vulnerability found,
+        Description: 1 non-CVE vulnerability found. To see more details, please create a free account at https://ossindex.sonatype.org/ and request for this information using your registered account,
+        CvssScore: 6.5,
+        CvssVector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N,
         Cwe: CWE-699,
-        Reference: https://ossindex.sonatype.org
+        Reference: https://ossindex.sonatype.org/vulnerability/sonatype-2014-0026
       }
     ]
   }
