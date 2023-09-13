@@ -1,13 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Net;
-
-class Downloader
+﻿class Downloader(HttpClient httpClient)
 {
-    HttpClient httpClient;
-
-    public Downloader(HttpClient httpClient) =>
-        this.httpClient = httpClient;
-
     const string RequestContentType = "application/vnd.ossindex.component-report-request.v1+json";
 
     public async Task<Stream> Post(string targetPath, string uri, string content)
@@ -69,13 +61,17 @@ class Downloader
 
         if (content == null)
         {
-            throw new($@"Invalid HTTP response: {response.StatusCode}.
-Uri:{uri}");
+            throw new($"""
+                       Invalid HTTP response: {response.StatusCode}.
+                       Uri:{uri}
+                       """);
         }
 
-        throw new($@"Invalid HTTP response: {response.StatusCode}.
-Uri:{uri}
-Content: {content}");
+        throw new($"""
+                   Invalid HTTP response: {response.StatusCode}.
+                   Uri:{uri}
+                   Content: {content}
+                   """);
     }
 
     static bool ReadIfRecent(string targetPath, [NotNullWhen(true)] out FileStream? stream)
