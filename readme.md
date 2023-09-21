@@ -5,6 +5,8 @@
 
 A .net client for OSSIndex (https://ossindex.sonatype.org/).
 
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
 
 ## NuGet package
 
