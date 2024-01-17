@@ -1,5 +1,4 @@
-﻿[UsesVerify]
-public class CoordinatesHelperTests
+﻿public class CoordinatesHelperTests
 {
     [Fact]
     public Task Parse() =>

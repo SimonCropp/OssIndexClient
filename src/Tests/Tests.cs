@@ -1,6 +1,5 @@
 ﻿using OssIndexClient;
 
-[UsesVerify]
 public class Tests
 {
     [Fact]
