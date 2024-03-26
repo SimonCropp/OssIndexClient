@@ -18,7 +18,7 @@ https://nuget.org/packages/OssIndexClient/
 ### Getting a report
 
 <!-- snippet: GetReport -->
-<a id='snippet-getreport'></a>
+<a id='snippet-GetReport'></a>
 ```cs
 using var ossIndexClient = new OssIndex();
 var report = await ossIndexClient.GetReport(
@@ -32,14 +32,14 @@ foreach (var vulnerability in report.Vulnerabilities)
     Debug.WriteLine(vulnerability.Title);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L53-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreport' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L53-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-GetReport' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 ### Getting multiple reports
 
 <!-- snippet: GetReports -->
-<a id='snippet-getreports'></a>
+<a id='snippet-GetReports'></a>
 ```cs
 using var ossIndexClient = new OssIndex();
 var reports = await ossIndexClient.GetReports(
@@ -59,7 +59,7 @@ foreach (var report in reports)
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L25-L45' title='Snippet source file'>snippet source</a> | <a href='#snippet-getreports' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L25-L45' title='Snippet source file'>snippet source</a> | <a href='#snippet-GetReports' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -145,7 +145,7 @@ foreach (var report in reports)
 The supported [OSSIndex Package Ecosystems](https://ossindex.sonatype.org/doc/coordinates) are represented by an enum.
 
 <!-- snippet: EcoSystem -->
-<a id='snippet-ecosystem'></a>
+<a id='snippet-EcoSystem'></a>
 ```cs
 public enum EcoSystem
 {
@@ -204,7 +204,7 @@ public enum EcoSystem
     gem,
 }
 ```
-<sup><a href='/src/OssIndexClient/EcoSystem.cs#L7-L66' title='Snippet source file'>snippet source</a> | <a href='#snippet-ecosystem' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/OssIndexClient/EcoSystem.cs#L7-L66' title='Snippet source file'>snippet source</a> | <a href='#snippet-EcoSystem' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
