@@ -108,8 +108,25 @@ Sonatype's research suggests that this CVE's details differ from those defined a
         ]
       },
       {
-        Id: sonatype-2016-0107,
-        Title: [sonatype-2016-0107] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
+        Id: CVE-2020-23064,
+        Title: [CVE-2020-23064] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
+        Description:
+Rejected reason: DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2020-11023. Reason: This candidate is a duplicate of CVE-2020-11023. Notes: All CVE users should reference CVE-2020-11023 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.
+
+Sonatype's research suggests that this CVE's details differ from those defined at NVD. See https://ossindex.sonatype.org/vulnerability/CVE-2020-23064 for details,
+        CvssScore: 6.1,
+        CvssVector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
+        Cve: CVE-2020-23064,
+        Cwe: CWE-79,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2020-23064?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-23064,
+          https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/
+        ]
+      },
+      {
+        Id: CVE-2015-9251,
+        Title: [CVE-2015-9251] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
         Description:
 jQuery - Cross-Site Scripting (XSS) [CVE-2015-9251]
 
@@ -118,7 +135,7 @@ The software does not neutralize or incorrectly neutralizes user-controllable in
         CvssVector: CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
         Cve: CVE-2015-9251,
         Cwe: CWE-79,
-        Reference: https://ossindex.sonatype.org/vulnerability/sonatype-2016-0107?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2015-9251?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
         ExternalReferences: [
           https://github.com/jquery/jquery/issues/2432,
           https://github.com/jquery/jquery/pull/2588,
@@ -126,8 +143,30 @@ The software does not neutralize or incorrectly neutralizes user-controllable in
         ]
       },
       {
-        Id: sonatype-2020-0187,
-        Title: [sonatype-2020-0187] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
+        Id: CVE-2016-10707,
+        Title: [CVE-2016-10707] CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion'),
+        Description:
+jquery - Uncontrolled Resource Consumption
+
+The software does not properly restrict the size or amount of resources that are requested or influenced by an actor, which can be used to consume more resources than intended.
+
+Sonatype's research suggests that this CVE's details differ from those defined at NVD. See https://ossindex.sonatype.org/vulnerability/CVE-2016-10707 for details,
+        CvssScore: 7.5,
+        CvssVector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,
+        Cve: CVE-2016-10707,
+        Cwe: CWE-400,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2016-10707?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
+        ExternalReferences: [
+          https://github.com/jquery/jquery/issues/3133,
+          https://github.com/jquery/jquery/issues/3371,
+          https://github.com/jquery/jquery/pull/2916,
+          https://github.com/jquery/jquery/pull/3134,
+          https://github.com/advisories/GHSA-mhpp-875w-9cpv
+        ]
+      },
+      {
+        Id: CVE-2020-11022,
+        Title: [CVE-2020-11022] CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'),
         Description:
 jQuery - Cross-Site Scripting (XSS)
 
@@ -136,22 +175,13 @@ The software does not neutralize or incorrectly neutralizes user-controllable in
         CvssVector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,
         Cve: CVE-2020-11022,
         Cwe: CWE-79,
-        Reference: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0187?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
+        Reference: https://ossindex.sonatype.org/vulnerability/CVE-2020-11022?component-type=npm&component-name=jquery&utm_source=ossindexclient&utm_medium=integration,
         ExternalReferences: [
           https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/,
           https://github.com/jquery/jquery/pull/4642,
           https://github.com/jquery/jquery/security/advisories/GHSA-gxr4-xjj5-5px2,
           https://jquery.com/upgrade-guide/3.5/
         ]
-      },
-      {
-        Id: sonatype-2014-0026,
-        Title: 1 vulnerability found,
-        Description: 1 non-CVE vulnerability found. To see more details, please create a free account at https://ossindex.sonatype.org/ and request for this information using your registered account,
-        CvssScore: 6.5,
-        CvssVector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N,
-        Cwe: CWE-699,
-        Reference: https://ossindex.sonatype.org/vulnerability/sonatype-2014-0026
       }
     ]
   }

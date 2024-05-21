@@ -14,7 +14,7 @@ static class CoordinatesHelper
     public static Package Parse(string coordinates)
     {
         var split = coordinates.Split('/', '@');
-        var ecoSystem = (EcoSystem) Enum.Parse(typeof(EcoSystem), split[0].Substring(4));
+        var ecoSystem = Enum.Parse<EcoSystem>(split[0].AsSpan(4));
         if (split.Length == 3)
         {
             var name = split[1];
