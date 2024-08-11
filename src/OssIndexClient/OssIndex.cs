@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-namespace OssIndexClient;
+﻿namespace OssIndexClient;
 
 public class OssIndex :
     IDisposable
