@@ -8,6 +8,7 @@ static class CoordinatesHelper
         {
             return $"pkg:{package.EcoSystem}/{package.Name}@{package.Version}";
         }
+
         return $"pkg:{package.EcoSystem}/{package.Namespace}/{package.Name}@{package.Version}";
     }
 
