@@ -1,6 +1,6 @@
 # <img src="/src/icon.png" height="30px"> OssIndexClient
 
-[![Build status](https://ci.appveyor.com/api/projects/status/41kf6ll7dbad35px?svg=true)](https://ci.appveyor.com/project/SimonCropp/ossindexclient)
+[![Build status](https://img.shields.io/appveyor/build/SimonCropp/ossindexclient)](https://ci.appveyor.com/project/SimonCropp/ossindexclient)
 [![NuGet Status](https://img.shields.io/nuget/v/OssIndexClient.svg)](https://www.nuget.org/packages/OssIndexClient/)
 
 A .net client for OSSIndex (https://ossindex.sonatype.org/).
